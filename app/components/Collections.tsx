@@ -9,21 +9,21 @@ const divisions = [
     title: "Global Distribution",
     category: "Wholesale Network",
     image:
-      "https://dummyimage.com/600x400/000/fff&text=LUMERA+GLOBAL+Distribution",
+      "https://images.unsplash.com/photo-1522771930-78848d9293e8?q=80&w=2000&auto=format&fit=crop",
     color: "bg-brand-accent/20",
   },
   {
     title: "Eco Manufacturing",
     category: "Sustainable Production",
     image:
-      "https://dummyimage.com/600x400/000/fff&text=LUMERA+GLOBAL+Manufacturing",
+      "https://images.unsplash.com/photo-1621454523226-c4752f44039c?q=80&w=2000&auto=format&fit=crop",
     color: "bg-brand-secondary/20",
   },
   {
     title: "Supply Logistics",
     category: "Inventory Solutions",
     image:
-      "https://dummyimage.com/600x400/000/fff&text=LUMERA+GLOBAL+Supply+Logistics",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=2000&auto=format&fit=crop",
     color: "bg-brand-primary/20",
   },
 ];
