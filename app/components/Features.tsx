@@ -1,99 +1,106 @@
 /* eslint-disable @next/next/no-img-element */
-/* eslint-disable jsx-a11y/alt-text */
 "use client";
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Leaf, Award, Heart, ShieldCheck } from "lucide-react";
+import { Leaf, Award, Heart, ShieldCheck, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const features = [
   {
     icon: Leaf,
     title: "Eco-Conscious Manufacturing",
-    desc: "Our production facilities adhere to the highest GOTS standards, ensuring sustainable growth for your brand.",
-    color: "bg-brand-accent/20",
+    desc: "Our production facilities adhere to the highest GOTS standards, ensuring sustainable growth.",
+    span: "md:col-span-2 md:row-span-1",
+    bg: "bg-white",
   },
   {
     icon: Award,
-    title: "Premium Wholesale Quality",
-    desc: "We provide high-margin, expertly crafted garments designed to elevate your retail offering.",
-    color: "bg-brand-primary/20",
+    title: "Premium Wholesale",
+    desc: "Expertly crafted garments designed to elevate your retail offering.",
+    span: "md:col-span-1 md:row-span-1",
+    bg: "bg-brand-primary/10",
   },
   {
     icon: Heart,
     title: "Ethical Supply Chain",
-    desc: "Transparency and fair labor practices are at the heart of our global operations.",
-    color: "bg-brand-secondary/20",
+    desc: "Transparency and fair labor practices are at our heart.",
+    span: "md:col-span-1 md:row-span-2",
+    bg: "bg-brand-secondary/10",
   },
   {
     icon: ShieldCheck,
-    title: "Retail Partner Support",
-    desc: "Dedicated account management and flexible logistics tailored to your business needs.",
-    color: "bg-zinc-100",
+    title: "Retail Support",
+    desc: "Dedicated account management and flexible logistics.",
+    span: "md:col-span-2 md:row-span-1",
+    bg: "bg-white",
   },
 ];
 
 const Features = () => {
   return (
-    <section id="expertise" className='py-24 bg-zinc-50 overflow-hidden scroll-mt-24'>
+    <section id="expertise" className='py-32 bg-brand-light/50 overflow-hidden scroll-mt-24'>
       <div className='container mx-auto px-6'>
-        <div className='grid lg:grid-cols-2 gap-24 items-center'>
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}>
-            <h2 className='text-4xl md:text-5xl font-bold mb-8 leading-tight text-zinc-950'>
-              Business <br />
-              <span className='text-gradient'>Expertise.</span>
-            </h2>
-            <p className='text-zinc-700 text-lg mb-12 font-medium leading-relaxed'>
-              LUMERA GLOBAL provides end-to-end fashion solutions, from ethical
-              sourcing to seamless global distribution. We are the backbone of
-              modern children&apos;s retail.
-            </p>
+        <div className="max-w-4xl mb-20">
+           <div className="flex items-center gap-3 mb-6">
+              <span className="w-8 h-[1px] bg-brand-dark/20" />
+              <span className='text-[10px] font-bold tracking-[0.3em] uppercase text-brand-dark/50'>Our Expertise</span>
+           </div>
+           <h2 className='text-5xl md:text-7xl font-display text-brand-dark leading-[1.1] mb-8'>
+             The Backbone of <br />
+             <span className='italic font-normal opacity-60'>Modern Retail.</span>
+           </h2>
+        </div>
 
-            <div className='grid sm:grid-cols-2 gap-8'>
-              {features.map((f, i) => (
-                <div key={i} className='group'>
-                  <div
-                    className={`w-14 h-14 rounded-2xl ${f.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <f.icon className='text-brand-dark' size={28} />
-                  </div>
-                  <h4 className='text-xl font-bold mb-3'>{f.title}</h4>
-                  <p className='text-zinc-700 text-sm leading-relaxed'>
-                    {f.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[240px]'>
+          {/* Main Large Card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className='relative'>
-            <div className='aspect-square rounded-[60px] overflow-hidden rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl'>
-              <Image
+            className="md:col-span-2 md:row-span-2 relative rounded-[40px] overflow-hidden group shadow-sm border border-brand-dark/5"
+          >
+             <Image 
                 src='/img/kim-tayona-CgBrItB1mGk-unsplash.jpg'
-                alt="Stylish Kids Outfit"
+                alt="Factory expertise"
                 fill
-                className='object-cover'
-              />
-            </div>
-            <div className='absolute -bottom-12 -left-12 glass p-8 rounded-3xl max-w-70 shadow-2xl -rotate-6'>
-              <p className='italic text-zinc-800 mb-4 font-bold'>
-                &quot;LUMERA GLOBAL has been a game-changer for our
-                boutique&apos;s supply chain. Their quality is unmatched.&quot;
-              </p>
-              <p className='font-bold text-zinc-950'>
-                - Michael R., Retail Partner
-              </p>
-            </div>
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
+             <div className="absolute bottom-10 left-10 right-10">
+                <div className="glass inline-flex p-3 rounded-2xl mb-6">
+                   <ShieldCheck className="text-white" size={24} />
+                </div>
+                <h3 className="text-3xl font-display text-white mb-4">Unmatched Quality Control</h3>
+                <p className="text-white/70 max-w-sm mb-6 font-light">
+                   Every thread is inspected by experts, ensuring that your brand delivers only the finest garments to your customers.
+                </p>
+                <button className="flex items-center gap-2 text-white font-bold group/btn">
+                   Learn more <ArrowRight size={18} className="transition-transform group-hover/btn:translate-x-1" />
+                </button>
+             </div>
           </motion.div>
+
+          {/* Feature Bento Cards */}
+          {features.map((f, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className={`${f.span} ${f.bg} rounded-[40px] p-10 flex flex-col justify-between border border-brand-dark/5 hover:border-brand-primary/30 transition-colors shadow-sm`}>
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6">
+                  <f.icon className='text-brand-dark' size={24} />
+                </div>
+                <h4 className='text-xl md:text-2xl font-display text-brand-dark mb-4'>{f.title}</h4>
+              </div>
+              <p className='text-brand-dark/60 text-sm leading-relaxed font-light'>
+                {f.desc}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

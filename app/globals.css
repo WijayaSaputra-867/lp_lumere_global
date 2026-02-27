@@ -5,21 +5,23 @@ html {
 }
 
 @theme {
-  --color-brand-primary: #FFB7B2; /* Soft Coral/Peach */
-  --color-brand-secondary: #B2E2F2; /* Soft Azure */
-  --color-brand-accent: #E2F0CB; /* Soft Mint */
-  --color-brand-dark: #2D3436;
-  --color-brand-light: #F9F9F9;
+  --color-brand-primary: #EAB2A0; /* Muted Terracotta/Peach */
+  --color-brand-secondary: #9DB7C4; /* Soft Cadet Blue */
+  --color-brand-accent: #D9D9D9; /* Silver/Light Gray */
+  --color-brand-dark: #1A1C1E; /* Deep Charcoal */
+  --color-brand-light: #FBFBFB;
   
   --font-sans: 'Outfit', 'Inter', sans-serif;
+  --font-display: 'Instrument Serif', serif;
 }
 
 :root {
-  --background: #F9F9F9;
-  --foreground: #2D3436;
-  --text-muted: #636e72;
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.3);
+  --background: #FBFBFB;
+  --foreground: #1A1C1E;
+  --text-muted: #64748B;
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 body {
@@ -27,32 +29,64 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--grain);
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 50;
 }
 
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #FFB7B2 0%, #B2E2F2 100%);
+  background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-secondary) 100%);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #FFB7B2, #B2E2F2);
+  background: linear-gradient(to right, #EAB2A0, #9DB7C4);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.bento-card {
+  @apply relative overflow-hidden rounded-[32px] border border-white/20 bg-white/10 p-8 transition-all duration-500 hover:scale-[1.02] hover:bg-white/20;
+  backdrop-filter: blur(10px);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 1.5rem;
+}
+
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(2deg); }
+  66% { transform: translateY(10px) rotate(-1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 10s ease-in-out infinite;
+}
+
+.reveal-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }

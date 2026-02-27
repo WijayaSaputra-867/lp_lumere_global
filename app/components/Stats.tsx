@@ -12,20 +12,29 @@ const Stats = () => {
   ];
 
   return (
-    <section className="bg-brand-dark py-12 relative z-20">
+    <section className="bg-brand-dark py-16 relative z-20">
+      {/* Subtle Grain Overlay for Stats only */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+        style={{ backgroundImage: 'var(--grain)' }}
+      />
+      
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
           {stats.map((stat, i) => (
             <motion.div 
               key={i} 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="text-center"
+              transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="relative"
             >
-              <p className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</p>
-              <p className="text-zinc-400 text-xs font-bold uppercase tracking-widest">{stat.label}</p>
+              <p className="text-5xl md:text-6xl font-display text-white mb-3 tracking-tight">{stat.value}</p>
+              <div className="flex items-center gap-3">
+                <span className="w-4 h-[1px] bg-brand-primary/50" />
+                <p className="text-white/40 text-[10px] font-bold uppercase tracking-[0.2em]">{stat.label}</p>
+              </div>
             </motion.div>
           ))}
         </div>

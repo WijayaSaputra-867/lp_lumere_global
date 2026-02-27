@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Outfit, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
+});
+
+const instrumentSerif = Instrument_Serif({
+  weight: "400",
+  subsets: ["latin"],
+  style: "italic",
+  variable: "--font-instrument",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${outfit.variable} font-sans antialiased`}
+        className={`${outfit.variable} ${instrumentSerif.variable} font-sans antialiased`}
       >
         <Navbar />
         {children}
