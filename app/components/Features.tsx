@@ -77,7 +77,7 @@ const Features = () => {
             className='relative'>
             <div className='aspect-square rounded-[60px] overflow-hidden rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl'>
               <img
-                src='https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?q=80&w=2000&auto=format&fit=crop'
+                src='https://images.unsplash.com/photo-1519702777450-42f16214ede9?q=80&w=2000&auto=format&fit=crop'
                 className='w-full h-full object-cover'
               />
             </div>

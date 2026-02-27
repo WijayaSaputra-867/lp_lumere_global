@@ -9,14 +9,14 @@ const divisions = [
     title: "Global Distribution",
     category: "Wholesale Network",
     image:
-      "https://images.unsplash.com/photo-1522771930-78848d9293e8?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?q=80&w=2000&auto=format&fit=crop",
     color: "bg-brand-accent/20",
   },
   {
     title: "Eco Manufacturing",
     category: "Sustainable Production",
     image:
-      "https://images.unsplash.com/photo-1621454523226-c4752f44039c?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=2000&auto=format&fit=crop",
     color: "bg-brand-secondary/20",
   },
   {

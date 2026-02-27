@@ -67,7 +67,7 @@ const Hero = () => {
             className='relative'>
             <div className='aspect-video md:aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl relative'>
               <img
-                src='https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?q=80&w=2000&auto=format&fit=crop'
+                src='https://images.unsplash.com/photo-1621335829175-95f437389d3c?q=80&w=2000&auto=format&fit=crop'
                 alt='LUMERA GLOBAL Manufacturing'
                 className='w-full h-full object-cover'
               />
