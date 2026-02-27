@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const divisions = [
   {
@@ -31,8 +32,8 @@ const divisions = [
 const Collections = () => {
   return (
     <section
-      id='collections'
-      className='py-24 bg-white relative overflow-hidden text-zinc-900'>
+      id='divisions'
+      className='py-24 bg-white relative overflow-hidden text-zinc-900 scroll-mt-24'>
       <div className='container mx-auto px-6'>
         <div className='flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6'>
           <motion.div
@@ -41,7 +42,7 @@ const Collections = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}>
             <h2 className='text-4xl md:text-5xl font-bold mb-4'>
-              Business <span className='text-gradient'>Expertise</span>
+              Strategic <span className='text-gradient'>Divisions</span>
             </h2>
             <p className='text-zinc-600 max-w-md font-medium'>
               Empowering retail partners through world-class manufacturing and a
@@ -72,10 +73,11 @@ const Collections = () => {
               className='group cursor-pointer'>
               <div
                 className={`relative aspect-[3/4] rounded-[32px] overflow-hidden mb-6 ${item.color}`}>
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
-                  className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out grayscale-[0.2] group-hover:grayscale-0'
+                  fill
+                  className='object-cover group-hover:scale-110 transition-transform duration-700 ease-out grayscale-[0.2] group-hover:grayscale-0'
                 />
                 <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8'>
                   <button className='w-full py-4 bg-white rounded-2xl font-bold text-sm uppercase tracking-widest translate-y-4 group-hover:translate-y-0 transition-transform duration-500'>

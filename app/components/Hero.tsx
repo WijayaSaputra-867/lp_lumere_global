@@ -4,8 +4,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const Hero = () => {
+  // Array gambar untuk avatar partner (biar tidak kosong/abu-abu saja)
+  const partners = [
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop",
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+  ];
+
   return (
     <section className='relative min-h-screen flex items-center pt-24 overflow-hidden'>
       {/* Background Abstract Shapes */}
@@ -46,11 +55,17 @@ const Hero = () => {
 
             <div className='mt-12 flex items-center gap-6'>
               <div className='flex -space-x-4'>
-                {[1, 2, 3, 4].map((i) => (
+                {partners.map((imgUrl, i) => (
                   <div
                     key={i}
-                    className='w-12 h-12 rounded-full border-4 border-white bg-zinc-200 overflow-hidden'
-                  />
+                    className='w-12 h-12 rounded-full border-4 border-white bg-zinc-200 overflow-hidden relative'>
+                    <Image 
+                      src={imgUrl} 
+                      alt={`Partner ${i}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 ))}
               </div>
               <p className='text-sm font-bold text-zinc-800'>
@@ -66,17 +81,19 @@ const Hero = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className='relative'>
             <div className='aspect-video md:aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl relative'>
-              <img
-                src='https://images.unsplash.com/photo-1621335829175-95f437389d3c?q=80&w=2000&auto=format&fit=crop'
-                alt='LUMERA GLOBAL Manufacturing'
-                className='w-full h-full object-cover'
+              
+              <Image
+                src='/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg'
+                alt='LUMERA GLOBAL Kids Fashion'
+                fill
+                className='object-cover'
               />
               <div className='absolute inset-0 bg-gradient-to-r from-brand-dark/20 to-transparent' />
               <div className='absolute bottom-8 left-8 glass p-6 rounded-2xl max-w-xs'>
-                <p className='text-zinc-500 text-xs font-bold uppercase tracking-widest mb-1 opacity-80'>
+                <p className='text-white/80 text-xs font-bold uppercase tracking-widest mb-1'>
                   Industry Leader
                 </p>
-                <p className='text-zinc-950 text-xl font-bold'>
+                <p className='text-white text-xl font-bold'>
                   Excellence in Every Thread
                 </p>
               </div>

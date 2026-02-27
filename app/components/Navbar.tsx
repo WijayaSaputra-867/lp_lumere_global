@@ -42,9 +42,12 @@ const Navbar = () => {
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-            <button className="hidden md:block px-6 py-2 bg-brand-dark text-white text-sm font-bold rounded-full hover:scale-105 transition-transform active:scale-95">
+            <a 
+              href="#contact"
+              className="hidden md:block px-6 py-2 bg-brand-dark text-white text-sm font-bold rounded-full hover:scale-105 transition-transform active:scale-95 text-center"
+            >
               CONTACT US
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -69,9 +72,13 @@ const Navbar = () => {
                   {item}
                 </a>
               ))}
-              <button className="w-full py-3 bg-brand-dark text-white font-bold rounded-xl mt-4">
+              <a 
+                href="#contact"
+                className="w-full py-3 bg-brand-dark text-white font-bold rounded-xl mt-4 text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 CONTACT US
-              </button>
+              </a>
             </div>
           </motion.div>
         )}

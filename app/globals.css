@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --color-brand-primary: #FFB7B2; /* Soft Coral/Peach */
   --color-brand-secondary: #B2E2F2; /* Soft Azure */
