@@ -9,8 +9,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "LUMERA GLOBAL | Modern Kids Fashion",
-  description: "Premium, sustainable, and modern fashion for the next generation of small icons.",
+  title: "LUMERA GLOBAL | Premium Wholesale & Manufacturing",
+  description: "A global leader in ethical children's fashion manufacturing and wholesale distribution.",
 };
 
 export default function RootLayout({

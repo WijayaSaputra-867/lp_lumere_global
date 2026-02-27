@@ -28,18 +28,14 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {['Collections', 'New Arrivals', 'About', 'Sustainability'].map((item) => (
+            {['Expertise', 'Divisions', 'About Us', 'Sustainability'].map((item) => (
               <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-sm font-bold text-zinc-900 hover:text-brand-primary transition-colors uppercase tracking-wider">
                 {item}
               </a>
             ))}
           </div>
 
-          {/* Actions */}
           <div className="flex items-center gap-4">
-            <button className="p-2 hover:bg-black/5 rounded-full transition-colors">
-              <ShoppingBag size={20} />
-            </button>
             <button 
               className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -47,7 +43,7 @@ const Navbar = () => {
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
             <button className="hidden md:block px-6 py-2 bg-brand-dark text-white text-sm font-bold rounded-full hover:scale-105 transition-transform active:scale-95">
-              SHOP NOW
+              CONTACT US
             </button>
           </div>
         </div>
@@ -63,7 +59,7 @@ const Navbar = () => {
             className="md:hidden absolute top-full left-0 right-0 mt-2 px-6"
           >
             <div className="glass rounded-2xl p-6 flex flex-col gap-4 shadow-xl text-center">
-              {['Collections', 'New Arrivals', 'About', 'Sustainability'].map((item) => (
+              {['Expertise', 'Divisions', 'About Us', 'Sustainability'].map((item) => (
                 <a 
                   key={item} 
                   href={`#${item.toLowerCase().replace(' ', '-')}`} 
@@ -74,7 +70,7 @@ const Navbar = () => {
                 </a>
               ))}
               <button className="w-full py-3 bg-brand-dark text-white font-bold rounded-xl mt-4">
-                SHOP NOW
+                CONTACT US
               </button>
             </div>
           </motion.div>

@@ -44,15 +44,15 @@ const Footer = () => {
 
           <div>
             <h4 className='text-lg font-bold mb-8 uppercase tracking-widest'>
-              Shop
+              Services
             </h4>
             <ul className='space-y-4'>
               {[
-                "New Arrivals",
-                "Best Sellers",
-                "Sustainable Edit",
-                "Accessories",
-                "Sale",
+                "Wholesale Portal",
+                "OEM Manufacturing",
+                "Custom Design",
+                "Supply Chain",
+                "Global Logistics",
               ].map((item) => (
                 <li key={item}>
                   <a
@@ -67,15 +67,15 @@ const Footer = () => {
 
           <div>
             <h4 className='text-lg font-bold mb-8 uppercase tracking-widest'>
-              Company
+              Corporate
             </h4>
             <ul className='space-y-4'>
               {[
                 "Our Story",
-                "Sustainability",
-                "Store Locator",
-                "Contact Us",
-                "Terms & Privacy",
+                "Sustainability Report",
+                "Manufacturing Ethics",
+                "Partner With Us",
+                "Contact Relations",
               ].map((item) => (
                 <li key={item}>
                   <a
