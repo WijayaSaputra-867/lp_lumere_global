@@ -6,46 +6,46 @@ import { ArrowRight } from "lucide-react";
 
 const colors = [
   {
-    name: "Nila Pusaka",
+    name: "Heritage Indigo",
     hex: "#1E3A5F",
     description:
-      "Biru dalam dari daun nila yang difermentasi — warna yang semakin dalam dengan setiap pencucian, seperti kebijaksanaan dengan usia.",
-    source: "Tanaman Nila",
+      "Deep blue from fermented indigo leaves — a color that deepens with each wash, like wisdom with age.",
+    source: "Indigo Plant",
   },
   {
-    name: "Emas Kunyit",
+    name: "Turmeric Gold",
     hex: "#CCA460",
     description:
-      "Corak emas hangat dari akar kurcuma. Sakral dalam tradisi Jawa, melambangkan kemakmuran dan kehangatan.",
-    source: "Akar Kurcuma",
+      "Warm golden hues from curcuma root. Sacred in Javanese tradition, symbolizing prosperity and warmth.",
+    source: "Curcuma Root",
   },
   {
-    name: "Bumi Mahoni",
+    name: "Mahogany Earth",
     hex: "#8B4A3B",
     description:
-      "Corak coklat kaya dari kulit mahoni, menempatkan setiap pakaian di hutan dalam Kalimantan.",
-    source: "Kulit Mahoni",
+      "Rich brown tones from mahogany bark, grounding each garment in the deep forests of Kalimantan.",
+    source: "Mahogany Bark",
   },
   {
-    name: "Putih Alami",
+    name: "Natural White",
     hex: "#F5F0E8",
     description:
-      "Katun organik kami yang tidak diwarnai. Murni, jujur, dan hanya dilembapkan oleh matahari dan air.",
-    source: "Kapas Tidak Diwarnai",
+      "Our undyed organic cotton. Pure, honest, and only softened by sun and water.",
+    source: "Undyed Cotton",
   },
   {
-    name: "Mawar Sapan",
+    name: "Sapan Rose",
     hex: "#C47B7B",
     description:
-      "Semburat lembut dari kayu sapan, yang secara tradisional digunakan dalam upacara penyembuhan di seluruh nusantara.",
-    source: "Kayu Sapan",
+      "Soft blush from sapan wood, traditionally used in healing ceremonies across the archipelago.",
+    source: "Sapan Wood",
   },
   {
-    name: "Lumut Hutan",
+    name: "Forest Moss",
     hex: "#4A6B5A",
     description:
-      "Hijau teredam dari ekstrak daun campuran, membangkitkan dataran tinggi berkabut Jawa Tengah.",
-    source: "Daun Campuran",
+      "Muted green from mixed leaf extracts, evoking the misty highlands of Central Java.",
+    source: "Mixed Leaves",
   },
 ];
 
@@ -60,14 +60,14 @@ const ColorsOfNature = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}>
             <p className='text-[11px] font-medium uppercase tracking-[0.4em] text-brand-dark/40 mb-6'>
-              Pewarna Berbasis Tanaman 100%
+              100% Plant-Based Dyes
             </p>
             <h2 className='text-5xl md:text-7xl font-display text-brand-dark leading-[0.95] mb-6'>
-              Warna-Warna <em className='font-light text-brand-accent'>Alam</em>
+              Colors of <em className='font-light text-brand-accent'>Nature</em>
             </h2>
             <p className='text-brand-dark/50 text-lg font-light max-w-lg mx-auto leading-relaxed'>
-              Setiap warna lahir dari tumbuhan. Tidak ada bahan kimia, tidak ada
-              sintetis — hanya palet jujur bumi, menceritakan cerita menjadi.
+              Every color is born from plants. No chemicals, no synthetics —
+              just earth's honest palette, telling stories of becoming.
             </p>
           </motion.div>
         </div>
@@ -78,7 +78,7 @@ const ColorsOfNature = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className='text-center text-2xl md:text-3xl font-display italic text-brand-dark/30 mb-20 max-w-2xl mx-auto'>
-          &ldquo;Seperti Anda, setiap warna membawa cerita menjadi.&rdquo;
+          &ldquo;Like you, every color carries a story of becoming.&rdquo;
         </motion.p>
 
         {/* Color Swatches Grid */}
@@ -120,7 +120,7 @@ const ColorsOfNature = () => {
           <a
             href='#catalogue'
             className='inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.2em] text-brand-dark/50 hover:text-brand-dark transition-colors underline-reveal'>
-            Temukan Warna Anda <ArrowRight size={14} />
+            Find Your Color <ArrowRight size={14} />
           </a>
         </motion.div>
       </div>

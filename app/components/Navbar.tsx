@@ -6,10 +6,10 @@ import { Menu, X, ShoppingBag, Search, User } from "lucide-react";
 import CartSidebar from "./CartSidebar";
 
 const navLinks = [
-  { name: "Toko", href: "#catalogue" },
-  { name: "Koleksi", href: "#divisions" },
-  { name: "Kisah Kami", href: "#about-us" },
-  { name: "Dampak", href: "#sustainability" },
+  { name: "Shop", href: "#catalogue" },
+  { name: "Collections", href: "#divisions" },
+  { name: "Our Story", href: "#about-us" },
+  { name: "Impact", href: "#sustainability" },
 ];
 
 const Navbar = () => {
@@ -20,8 +20,8 @@ const Navbar = () => {
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
-      name: "Gaun Linen Akar",
-      price: "Rp 1.250.000",
+      name: "Akar Linen Dress",
+      price: "$285",
       image: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
       quantity: 1,
     },
@@ -154,10 +154,10 @@ const Navbar = () => {
 
               <div className='mt-16 text-center'>
                 <p className='text-[10px] font-medium uppercase tracking-[0.3em] text-brand-dark/30 mb-4'>
-                  Berakar di Alam
+                  Rooted in Nature
                 </p>
                 <p className='text-brand-dark/40 text-sm font-light'>
-                  Dibuat untuk Masa Depan
+                  Made for Tomorrow
                 </p>
               </div>
             </motion.div>

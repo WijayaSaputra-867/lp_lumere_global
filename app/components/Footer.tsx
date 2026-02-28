@@ -15,13 +15,12 @@ const Footer = () => {
                 LUMERA
               </span>
               <p className='text-[9px] font-medium uppercase tracking-[0.4em] text-white/30 mt-1'>
-                Berakar di Alam, Dibuat untuk Masa Depan
+                Rooted in Nature, Made for Tomorrow
               </p>
             </div>
             <p className='text-white/40 text-base font-light max-w-sm leading-relaxed mb-10'>
-              Mode berkelanjutan yang dibuat oleh pengrajin dari Indonesia.
-              Setiap potongan dibuat dengan tangan dengan teknik warisan dan
-              pewarna alami 100%.
+              Sustainable fashion handcrafted by Indonesian artisans. Each piece
+              is made by hand with heritage techniques and 100% natural dyes.
             </p>
             <div className='flex items-center gap-4'>
               {[Instagram].map((Icon, i) => (
@@ -35,18 +34,18 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Toko */}
+          {/* Shop */}
           <div>
             <h4 className='text-[10px] font-medium mb-8 uppercase tracking-[0.3em] text-white/30'>
-              Toko
+              Shop
             </h4>
             <ul className='space-y-4'>
               {[
-                "Semua Produk",
-                "Koleksi Akar",
-                "Koleksi Langit",
-                "Koleksi Bumi",
-                "Kartu Hadiah",
+                "All Products",
+                "Roots Collection",
+                "Sky Collection",
+                "Earth Collection",
+                "Gift Cards",
               ].map((item) => (
                 <li key={item}>
                   <a
@@ -59,18 +58,18 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Bantuan & Tentang */}
+          {/* Help & About */}
           <div>
             <h4 className='text-[10px] font-medium mb-8 uppercase tracking-[0.3em] text-white/30'>
-              Tentang
+              About
             </h4>
             <ul className='space-y-4'>
               {[
-                "Kisah Kami",
-                "Dampak Kami",
-                "Panduan Perawatan",
-                "Pengiriman & Pengembalian",
-                "Hubungi Kami",
+                "Our Story",
+                "Our Impact",
+                "Care Guide",
+                "Shipping & Returns",
+                "Contact Us",
               ].map((item) => (
                 <li key={item}>
                   <a
@@ -87,12 +86,12 @@ const Footer = () => {
         {/* Bottom */}
         <div className='pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6'>
           <p className='text-white/20 text-[10px] font-medium uppercase tracking-[0.3em]'>
-            © 2026 Lumera. Dibuat dengan cinta di Indonesia.
+            © 2026 Lumera. Made with love in Indonesia.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className='flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.2em] text-white/30 hover:text-white transition-colors group'>
-            Kembali Ke Atas
+            Back to Top
             <div className='w-9 h-9 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-brand-dark group-hover:border-brand-primary transition-all'>
               <ArrowUp size={14} />
             </div>

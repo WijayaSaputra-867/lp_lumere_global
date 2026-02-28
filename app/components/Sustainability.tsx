@@ -8,33 +8,33 @@ const Sustainability = () => {
   const initiatives = [
     {
       icon: <Leaf size={24} />,
-      title: "Tanpa Bahan Kimia",
+      title: "Zero Chemicals",
       description:
-        "Setiap pewarna berasal dari tumbuhan — nila, kunyit, mahoni, dan kayu sapan. Tidak ada bahan kimia sintetis yang menyentuh kain kami.",
+        "Every dye comes from plants — indigo, turmeric, mahogany, and sapan wood. No synthetic chemicals touch our fabrics.",
       color: "text-brand-secondary",
       bg: "bg-brand-secondary/10",
     },
     {
       icon: <Heart size={24} />,
-      title: "Pemberdayaan Pengrajin",
+      title: "Artisan Empowerment",
       description:
-        "Upah yang adil, bengkel aman, dan pelatihan keterampilan untuk lebih dari 200 pengrajin wanita di seluruh Indonesia pedesaan.",
+        "Fair wages, safe workshops, and skills training for over 200 women artisans across rural Indonesia.",
       color: "text-brand-rose",
       bg: "bg-brand-rose/10",
     },
     {
       icon: <Globe size={24} />,
-      title: "Mode Regeneratif",
+      title: "Regenerative Fashion",
       description:
-        "Praktik pertanian kami memulihkan kesehatan tanah. Setiap pakaian yang Anda kenakan membantu menyembuhkan tanah tempat asalnya.",
+        "Our farming practices restore soil health. Every garment you wear helps heal the land it came from.",
       color: "text-brand-accent",
       bg: "bg-brand-accent/10",
     },
     {
       icon: <ShieldCheck size={24} />,
-      title: "Ketertelusuran Penuh",
+      title: "Full Traceability",
       description:
-        "Dari pertanian hingga lemari, setiap langkah rantai pasokan kami transparan. Ketahui siapa yang membuat pakaian Anda.",
+        "From farm to closet, every step of our supply chain is transparent. Know who made your clothes.",
       color: "text-brand-primary",
       bg: "bg-brand-primary/10",
     },
@@ -51,19 +51,19 @@ const Sustainability = () => {
             viewport={{ once: true }}
             className='max-w-2xl'>
             <p className='text-[11px] font-medium uppercase tracking-[0.4em] text-brand-dark/40 mb-6'>
-              Dampak Kami
+              Our Impact
             </p>
             <h2 className='text-5xl md:text-7xl font-display text-brand-dark leading-[0.95] mb-6'>
-              Mode Yang <br />
+              Fashion That <br />
               <em className='font-light text-brand-secondary'>
-                Menyembuhkan Bumi
+                Heals The Earth
               </em>
             </h2>
           </motion.div>
           <p className='text-brand-dark/50 text-lg font-light leading-relaxed max-w-md'>
-            Keberlanjutan bukan label yang kami kenakan — itu tanah tempat kami
-            tumbuh. Setiap keputusan menghormati pengrajin, komunitas mereka,
-            dan planet yang kami bagikan.
+            Sustainability isn't a label we wear — it's the ground we grow from.
+            Every decision honors the artisans, their communities, and the
+            planet we share.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ const Sustainability = () => {
                 {item.description}
               </p>
               <div className='flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.2em] text-brand-dark/30 group-hover:text-brand-dark transition-colors'>
-                Pelajari Lebih Lanjut <ArrowRight size={12} />
+                Learn More <ArrowRight size={12} />
               </div>
             </motion.div>
           ))}

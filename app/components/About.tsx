@@ -33,7 +33,7 @@ const About = () => {
               </span>
               <span className='w-6 h-px bg-brand-dark/20' />
               <span className='text-[9px] font-medium uppercase tracking-[0.2em] text-brand-dark/50'>
-                Jawa Tengah, Indonesia
+                Central Java, Indonesia
               </span>
             </div>
           </div>
@@ -41,7 +41,7 @@ const About = () => {
           {/* Floating caption */}
           <div className='absolute top-8 left-8 lg:top-12 lg:left-12'>
             <p className='text-white/70 text-[10px] font-medium uppercase tracking-[0.3em]'>
-              Bengkel Kerajinan Warisan
+              Heritage Craft Workshop
             </p>
           </div>
         </motion.div>
@@ -88,7 +88,7 @@ const About = () => {
                   200+
                 </p>
                 <p className='text-[10px] font-medium uppercase tracking-[0.3em] text-brand-dark/40'>
-                  Pembuat Pengrajin
+                  Artisan Makers
                 </p>
               </div>
               <div className='w-px h-12 bg-brand-dark/10' />
@@ -97,7 +97,7 @@ const About = () => {
                   100%
                 </p>
                 <p className='text-[10px] font-medium uppercase tracking-[0.3em] text-brand-dark/40'>
-                  Pewarna Alami
+                  Natural Dyes
                 </p>
               </div>
               <div className='w-px h-12 bg-brand-dark/10 hidden sm:block' />
@@ -106,7 +106,7 @@ const About = () => {
                   25+
                 </p>
                 <p className='text-[10px] font-medium uppercase tracking-[0.3em] text-brand-dark/40'>
-                  Negara
+                  Countries
                 </p>
               </div>
             </div>
@@ -114,7 +114,7 @@ const About = () => {
             <a
               href='#sustainability'
               className='group inline-flex items-center gap-4 px-8 py-4 border border-brand-dark/10 rounded-full text-[11px] font-medium uppercase tracking-[0.15em] text-brand-dark/60 hover:bg-brand-dark hover:text-white hover:border-brand-dark transition-all duration-500'>
-              Pelajari Dampak Kami
+              Learn Our Impact
               <ArrowRight
                 size={14}
                 className='group-hover:translate-x-1 transition-transform'
@@ -129,19 +129,19 @@ const About = () => {
         {[
           {
             img: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
-            label: "Ateliér",
+            label: "Atelier",
           },
           {
             img: "/img/kim-tayona-CgBrItB1mGk-unsplash.jpg",
-            label: "Pewarnaan Alami",
+            label: "Natural Dyeing",
           },
           {
             img: "/img/moses-janga-1eLxmJvZrr4-unsplash.jpg",
-            label: "Potongan Jadi",
+            label: "Finished Pieces",
           },
           {
             img: "/img/moses-janga-WZaPKRy4zYQ-unsplash.jpg",
-            label: "Komunitas",
+            label: "Community",
           },
         ].map((item, i) => (
           <motion.div

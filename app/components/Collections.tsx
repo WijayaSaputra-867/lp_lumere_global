@@ -7,26 +7,26 @@ import Image from "next/image";
 
 const collections = [
   {
-    title: "Akar",
+    title: "Roots",
     subtitle: "Akar",
     description:
-      "Potongan lengkap yang dibuat dari kain katun organik berwarna tanah. Teknik tenun warisan yang diwariskan turun-temurun.",
+      "Full-cut pieces crafted from earth-toned organic cotton fabrics. Heritage weaving techniques passed down through generations.",
     image: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
     className: "md:col-span-2 md:row-span-1",
   },
   {
-    title: "Langit",
+    title: "Sky",
     subtitle: "Langit",
     description:
-      "Pakaian berwarna nila yang terinspirasi dari luasnya langit Indonesia. Setiap corak menceritakan kisah kesabaran dan kerajinan.",
+      "Indigo-dyed garments inspired by the vastness of Indonesia's skies. Each pattern tells a story of patience and craft.",
     image: "/img/kim-tayona-CgBrItB1mGk-unsplash.jpg",
     className: "md:col-span-1 md:row-span-2",
   },
   {
-    title: "Bumi",
+    title: "Earth",
     subtitle: "Bumi",
     description:
-      "Linen berwarna kunyit dan mahoni yang merayakan tanah kaya Jawa. Nada hangat untuk hati yang hangat.",
+      "Turmeric and mahogany-colored linens celebrating the rich soils of Java. Warm tones for warm hearts.",
     image: "/img/moses-janga-1eLxmJvZrr4-unsplash.jpg",
     className: "md:col-span-2 md:row-span-1",
   },
@@ -43,17 +43,15 @@ const Collections = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}>
             <p className='text-[11px] font-medium uppercase tracking-[0.4em] text-brand-dark/40 mb-6'>
-              Koleksi yang Dikurasi
+              Curated Collections
             </p>
             <h2 className='text-5xl md:text-7xl font-display text-brand-dark leading-[0.95] mb-6'>
-              Setiap Benang <br />
-              <em className='font-light text-brand-primary'>
-                Menceritakan Kisah
-              </em>
+              Every Thread <br />
+              <em className='font-light text-brand-primary'>Tells A Story</em>
             </h2>
             <p className='text-brand-dark/50 text-lg font-light max-w-lg mx-auto leading-relaxed'>
-              Tiga koleksi terinspirasi oleh elemen alam Indonesia,
-              masing-masing dibuat dengan tangan oleh komunitas pengrajin kami.
+              Three collections inspired by Indonesia&apos;s natural elements,
+              each handcrafted by our artisan communities.
             </p>
           </motion.div>
         </div>
@@ -98,7 +96,7 @@ const Collections = () => {
                       {item.description}
                     </p>
                     <div className='flex items-center gap-2 text-white/70 text-[11px] font-medium uppercase tracking-[0.2em] hover:text-white transition-colors'>
-                      Jelajahi Koleksi <ArrowRight size={14} />
+                      Explore Collection <ArrowRight size={14} />
                     </div>
                   </div>
                 </div>

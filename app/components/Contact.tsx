@@ -15,19 +15,17 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}>
             <p className='text-[11px] font-medium uppercase tracking-[0.4em] text-brand-dark/40 mb-6'>
-              Hubungi Kami
+              Contact Us
             </p>
 
             <h2 className='text-5xl md:text-7xl font-display text-brand-dark leading-[0.95] mb-8'>
-              Kami Ingin <br />
-              <em className='font-light text-brand-primary'>
-                Mendengar dari Anda
-              </em>
+              We'd Love to <br />
+              <em className='font-light text-brand-primary'>Hear from You</em>
             </h2>
 
             <p className='text-brand-dark/50 text-lg font-light leading-relaxed mb-12 max-w-md'>
-              Apakah Anda penasaran dengan proses kami, ingin mengunjungi
-              atelier kami, atau memiliki pertanyaan — kami di sini.
+              Whether you're curious about our process, want to visit our
+              atelier, or have questions — we're here.
             </p>
 
             {/* Contact Details */}
@@ -89,12 +87,12 @@ const Contact = () => {
               <div className='grid md:grid-cols-2 gap-6'>
                 <div className='space-y-2'>
                   <label className='text-[10px] font-medium text-brand-dark/40 uppercase tracking-[0.2em] px-4'>
-                    Nama
+                    Name
                   </label>
                   <input
                     type='text'
                     className='w-full px-6 py-4 bg-white border border-brand-dark/5 focus:border-brand-primary outline-none rounded-xl transition-all font-light text-brand-dark placeholder:text-brand-dark/20 text-sm'
-                    placeholder='Nama Anda'
+                    placeholder='Your Name'
                   />
                 </div>
                 <div className='space-y-2'>
@@ -104,36 +102,36 @@ const Contact = () => {
                   <input
                     type='email'
                     className='w-full px-6 py-4 bg-white border border-brand-dark/5 focus:border-brand-primary outline-none rounded-xl transition-all font-light text-brand-dark placeholder:text-brand-dark/20 text-sm'
-                    placeholder='email@anda.com'
+                    placeholder='email@yours.com'
                   />
                 </div>
               </div>
 
               <div className='space-y-2'>
                 <label className='text-[10px] font-medium text-brand-dark/40 uppercase tracking-[0.2em] px-4'>
-                  Subjek
+                  Subject
                 </label>
                 <select className='w-full px-6 py-4 bg-white border border-brand-dark/5 focus:border-brand-primary outline-none rounded-xl transition-all font-light text-brand-dark text-sm appearance-none cursor-pointer'>
-                  <option>Pertanyaan Umum</option>
-                  <option>Pesanan Khusus</option>
-                  <option>Grosir</option>
-                  <option>Kunjungi Atelier</option>
-                  <option>Pers & Media</option>
+                  <option>General Inquiry</option>
+                  <option>Custom Order</option>
+                  <option>Wholesale</option>
+                  <option>Visit Atelier</option>
+                  <option>Press & Media</option>
                 </select>
               </div>
 
               <div className='space-y-2'>
                 <label className='text-[10px] font-medium text-brand-dark/40 uppercase tracking-[0.2em] px-4'>
-                  Pesan
+                  Message
                 </label>
                 <textarea
                   rows={4}
                   className='w-full px-6 py-4 bg-white border border-brand-dark/5 focus:border-brand-primary outline-none rounded-xl transition-all font-light resize-none text-brand-dark placeholder:text-brand-dark/20 text-sm'
-                  placeholder='Katakan apa yang ada di pikiran Anda...'></textarea>
+                  placeholder="Tell us what's on your mind..."></textarea>
               </div>
 
               <button className='w-full py-4 bg-brand-dark text-white rounded-xl font-medium flex items-center justify-center gap-3 hover:bg-brand-primary hover:text-brand-dark transition-all duration-500 text-[11px] uppercase tracking-[0.15em]'>
-                Kirim Pesan <ArrowRight size={16} />
+                Send Message <ArrowRight size={16} />
               </button>
             </form>
           </motion.div>

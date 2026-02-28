@@ -7,27 +7,27 @@ import { Scissors, Sprout, HandHeart, Infinity } from "lucide-react";
 const promises = [
   {
     icon: <Scissors size={28} />,
-    title: "Dibuat dengan Tangan",
+    title: "Handmade",
     description:
-      "Setiap potongan disentuh oleh tangan pengrajin, bukan mesin pabrik. Setiap pakaian membawa kehangatan pembuatnya.",
+      "Every piece is touched by artisan hands, not factory machines. Each garment carries the warmth of its maker.",
   },
   {
     icon: <Sprout size={28} />,
-    title: "Dari Ladang ke Lemari",
+    title: "Farm to Closet",
     description:
-      "Kami mengenal setiap langkah — dari ladang tempat kapas tumbuh hingga lemari di mana ia hidup. Transparansi penuh, selalu.",
+      "We know every step — from the fields where cotton grows to the closet where it lives. Full transparency, always.",
   },
   {
     icon: <HandHeart size={28} />,
-    title: "Teknik Warisan",
+    title: "Heritage Techniques",
     description:
-      "Batik, ikat, pewarnaan alami — tradisi kerajinan tua Indonesia berabad-abad dilestarikan dan dirayakan dalam desain modern.",
+      "Batik, ikat, natural dyeing — Indonesia's centuries-old craft traditions preserved and celebrated in modern design.",
   },
   {
     icon: <Infinity size={28} />,
-    title: "Perawatan Seumur Hidup",
+    title: "Lifetime Care",
     description:
-      "Kami menawarkan perbaikan gratis selamanya. Karena pakaian paling berkelanjutan adalah yang tidak pernah Anda buang.",
+      "We offer free repairs forever. Because the most sustainable garment is the one you never throw away.",
   },
 ];
 
@@ -42,16 +42,15 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}>
             <p className='text-[11px] font-medium uppercase tracking-[0.4em] text-brand-dark/40 mb-6'>
-              Janji Kami
+              Our Promise
             </p>
             <h2 className='text-5xl md:text-7xl font-display text-brand-dark leading-[0.95] mb-6'>
-              Pakaian Dibuat dengan{" "}
-              <em className='font-light text-brand-accent'>Niat</em>
+              Clothing Made with{" "}
+              <em className='font-light text-brand-accent'>Intent</em>
             </h2>
             <p className='text-brand-dark/50 text-lg font-light max-w-lg mx-auto leading-relaxed'>
-              Empat pilar memandu semua yang kami ciptakan — memastikan setiap
-              pakaian layak untuk tangan yang membuatnya dan orang yang
-              memakainya.
+              Four pillars guide everything we create — ensuring every garment
+              is worthy of the hands that made it and the person who wears it.
             </p>
           </motion.div>
         </div>

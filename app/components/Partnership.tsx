@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useState } from "react";
@@ -14,25 +15,25 @@ import {
 import Image from "next/image";
 
 const categories = [
-  { id: "testing", name: "Market Testing", range: "Rp 650k - Rp 1.2M" },
-  { id: "growth", name: "Growth & Variety", range: "Rp 1.65M - Rp 2.25M" },
-  { id: "serious", name: "Serious Selling", range: "Rp 3.55M - Rp 5.5M" },
-  { id: "strategic", name: "Strategic Partner", range: "Rp 12.5M - Rp 25M" },
+  { id: "testing", name: "Market Testing", range: "$145 - $270" },
+  { id: "growth", name: "Growth & Variety", range: "$370 - $505" },
+  { id: "serious", name: "Serious Selling", range: "$800 - $1,235" },
+  { id: "strategic", name: "Strategic Partner", range: "$2,810 - $5,620" },
 ];
 
 const packages = [
   {
     id: 1,
     categoryId: "testing",
-    name: "Paket Sampel Murmer",
-    tag: "TES PASAR PALING HEMAT",
-    price: "Rp 650.000",
-    qty: "25 pcs campur ukuran",
-    desc: "Untuk tes minat pasar tanpa takut stok numpuk.",
+    name: "Starter Sample Pack",
+    tag: "MOST AFFORDABLE MARKET TEST",
+    price: "$145",
+    qty: "25 pcs mixed sizes",
+    desc: "Test market interest without worrying about excess inventory.",
     benefits: [
-      "Stok ringan, aman untuk mulai",
-      "Mix model laris untuk display & foto",
-      "Enak dijual ke tetangga/teman kantor",
+      "Light stock, safe to start",
+      "Mix of bestseller models for display & photos",
+      "Easy to sell to neighbors/coworkers",
     ],
     image: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
     accent: "bg-brand-primary",
@@ -40,15 +41,15 @@ const packages = [
   {
     id: 2,
     categoryId: "testing",
-    name: "Paket Mix Sampel Murmer",
-    tag: "SAMPLE MIX IMPORT LOKAL",
-    price: "Rp 850.000",
-    qty: "30 pcs (mix import lokal)",
-    desc: "Lebih banyak varian untuk lihat selera pasar.",
+    name: "Mixed Sample Pack",
+    tag: "IMPORT & LOCAL MIX SAMPLE",
+    price: "$190",
+    qty: "30 pcs (import & local mix)",
+    desc: "More variety to gauge market preference.",
     benefits: [
-      "Kombinasi import & lokal pilihan",
-      "Cocok untuk foto katalog awal",
-      "Siap dijual online & offline ringan",
+      "Curated import & local combination",
+      "Perfect for initial catalog photos",
+      "Ready for light online & offline sales",
     ],
     image: "/img/kim-tayona-CgBrItB1mGk-unsplash.jpg",
     accent: "bg-brand-primary",
@@ -56,15 +57,15 @@ const packages = [
   {
     id: 3,
     categoryId: "testing",
-    name: "Paket Usaha Mix Fashion",
-    tag: "MULAI USAHA SERIUS",
-    price: "Rp 1.000.000",
-    qty: "36 pcs (mix import lokal)",
-    desc: "Pas untuk kamu yang siap jualan rutin.",
+    name: "Mixed Fashion Business Pack",
+    tag: "START SERIOUS BUSINESS",
+    price: "$225",
+    qty: "36 pcs (import & local mix)",
+    desc: "Perfect for those ready to sell regularly.",
     benefits: [
-      "Komposisi harian & semi-event",
-      "Bisa dijual satuan atau paket",
-      "Enak mulai masuk marketplace",
+      "Daily & semi-event composition",
+      "Can be sold individually or in packages",
+      "Easy to start entering marketplace",
     ],
     image: "/img/moses-janga-1eLxmJvZrr4-unsplash.jpg",
     accent: "bg-brand-secondary",
@@ -72,15 +73,15 @@ const packages = [
   {
     id: 4,
     categoryId: "testing",
-    name: "Paket Super Trial",
-    tag: "NGETEST MARKET ONLINE",
-    price: "Rp 1.200.000",
+    name: "Super Trial Pack",
+    tag: "ONLINE MARKET TESTING",
+    price: "$270",
     qty: "30 pcs",
-    desc: "Ideal untuk tes market di IG, TikTok & WA.",
+    desc: "Ideal for market testing on IG, TikTok & WhatsApp.",
     benefits: [
-      "Isi model fotogenik untuk konten",
-      "Support foto & caption",
-      "Aman untuk tes harga & respon pasar",
+      "Photogenic models for content",
+      "Photo & caption support",
+      "Safe for testing pricing & market response",
     ],
     image: "/img/moses-janga-WZaPKRy4zYQ-unsplash.jpg",
     accent: "bg-brand-accent",
@@ -88,15 +89,15 @@ const packages = [
   {
     id: 5,
     categoryId: "growth",
-    name: "Paket Kombinasi",
-    tag: "PAKET KOMBINASI FLEXIBLE",
-    price: "Rp 1.650.000",
-    qty: "45 pcs (mix import lokal)",
-    desc: "Untuk yang ingin varian ukuran & model lebih banyak.",
+    name: "Combination Pack",
+    tag: "FLEXIBLE COMBINATION PACK",
+    price: "$370",
+    qty: "45 pcs (import & local mix)",
+    desc: "For those who want more variety in sizes & models.",
     benefits: [
-      "Nyaman untuk keluarga & online",
-      "Enak untuk paket bundling",
-      "Stok masih ringan tapi kelihatan 'jalan'",
+      "Comfortable for family & online",
+      "Great for bundling packages",
+      "Still light stock but looks 'moving'",
     ],
     image: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
     accent: "bg-brand-primary",
@@ -104,15 +105,15 @@ const packages = [
   {
     id: 6,
     categoryId: "growth",
-    name: "Paket Boom Laris Jualan",
-    tag: "BEST SELLER PEMULA NAIK LEVEL",
-    price: "Rp 1.800.000",
+    name: "Bestseller Boom Pack",
+    tag: "BEST SELLER BEGINNER LEVEL UP",
+    price: "$405",
     qty: "50 pcs",
-    desc: "Pas untuk yang sudah rutin dapat order.",
+    desc: "Perfect for those already getting regular orders.",
     benefits: [
-      "Komposisi model paling laris",
-      "Cocok untuk live & flash sale",
-      "Mulai siap gandeng reseller sekitar",
+      "Composition of most popular models",
+      "Suitable for live & flash sales",
+      "Ready to partner with nearby resellers",
     ],
     image: "/img/kim-tayona-CgBrItB1mGk-unsplash.jpg",
     accent: "bg-brand-primary",
@@ -120,15 +121,15 @@ const packages = [
   {
     id: 7,
     categoryId: "growth",
-    name: "New Paket Eksklusif",
-    tag: "NEW PAKET EKSKLUSIF",
-    price: "Rp 2.250.000",
+    name: "New Exclusive Pack",
+    tag: "NEW EXCLUSIVE PACK",
+    price: "$505",
     qty: "65 pcs",
-    desc: "Untuk segmen bunda yang cari look premium.",
+    desc: "For segments seeking premium looks.",
     benefits: [
-      "Fokus model premium & rapi difoto",
-      "Cocok main di harga menengah atas",
-      "Bantu naikkan image 'toko serius'",
+      "Focus on premium models & photo-ready",
+      "Suitable for mid-to-high pricing",
+      "Helps elevate 'serious store' image",
     ],
     image: "/img/moses-janga-1eLxmJvZrr4-unsplash.jpg",
     accent: "bg-brand-secondary",
@@ -136,15 +137,15 @@ const packages = [
   {
     id: 8,
     categoryId: "serious",
-    name: "Paket Mini Murmer",
-    tag: "SIAPIN STOK HARIAN",
-    price: "Rp 3.550.000",
+    name: "Mini Value Pack",
+    tag: "PREPARE DAILY STOCK",
+    price: "$800",
     qty: "100 pcs",
-    desc: "Stok nyaman untuk sering upload & sering closing.",
+    desc: "Comfortable stock for frequent uploads & closings.",
     benefits: [
-      "Cocok untuk jualan full online",
-      "Siap untuk beberapa momen promo",
-      "Mulai bisa gandeng reseller kecil",
+      "Perfect for full online sales",
+      "Ready for multiple promo moments",
+      "Can start partnering with small resellers",
     ],
     image: "/img/moses-janga-WZaPKRy4zYQ-unsplash.jpg",
     accent: "bg-brand-primary",
@@ -152,15 +153,15 @@ const packages = [
   {
     id: 9,
     categoryId: "serious",
-    name: "Paket Hemat Buka Usaha",
-    tag: "SIAP JADI TOKO SERIUS",
-    price: "Rp 5.500.000",
+    name: "Business Launch Value Pack",
+    tag: "READY TO BE SERIOUS STORE",
+    price: "$1,235",
     qty: "125 pcs",
-    desc: "Paket hemat buat mulai usaha lebih serius.",
+    desc: "Value pack to start more serious business.",
     benefits: [
-      "Cukup untuk etalase kecil di rumah",
-      "Enak mulai rekrut reseller aktif",
-      "Kombinasi harian & event",
+      "Enough for small home display",
+      "Easy to start recruiting active resellers",
+      "Daily & event combination",
     ],
     image: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
     accent: "bg-brand-secondary",
@@ -168,15 +169,15 @@ const packages = [
   {
     id: 10,
     categoryId: "strategic",
-    name: "Paket Buka Toko",
-    tag: "PAKET BUKA TOKO OFFLINE",
-    price: "Rp 12.500.000",
+    name: "Store Opening Pack",
+    tag: "OFFLINE STORE OPENING PACK",
+    price: "$2,810",
     qty: "300–350 pcs (free banner)",
-    desc: "Siap punya toko fisik dengan tampilan profesional.",
+    desc: "Ready to have physical store with professional display.",
     benefits: [
-      "Stok 300–350 pcs mix model & ukuran",
-      "Free banner toko siap pasang",
-      "Cocok untuk kios kecil atau di rumah",
+      "Stock 300–350 pcs mixed models & sizes",
+      "Free store banner ready to install",
+      "Suitable for small kiosk or home store",
     ],
     image: "/img/kim-tayona-CgBrItB1mGk-unsplash.jpg",
     accent: "bg-brand-primary",
@@ -184,15 +185,15 @@ const packages = [
   {
     id: 11,
     categoryId: "strategic",
-    name: "Paket Ball Mega Premium",
-    tag: "LEVEL BALL MEGA PREMIUM",
-    price: "Rp 25.000.000",
+    name: "Mega Premium Ball Pack",
+    tag: "MEGA PREMIUM BALL LEVEL",
+    price: "$5,620",
     qty: "550 pcs",
-    desc: "Untuk yang siap kuasai area dan bangun jaringan reseller.",
+    desc: "For those ready to dominate area and build reseller network.",
     benefits: [
-      "Stok besar cover 1 kota/kabupaten",
-      "Ideal bangun tim reseller di bawahmu",
-      "Dibantu susun strategi distribusi",
+      "Large stock covers 1 city/district",
+      "Ideal for building reseller team under you",
+      "Assisted with distribution strategy setup",
     ],
     image: "/img/moses-janga-1eLxmJvZrr4-unsplash.jpg",
     accent: "bg-brand-secondary",
@@ -239,7 +240,7 @@ const Partnership = () => {
             <button
               key={cat.id}
               onClick={() => setActiveTab(cat.id)}
-              className={`relative px-12 py-6 rounded-[32px] transition-all duration-700 overflow-hidden group ${
+              className={`relative px-12 py-6 rounded-4xl transition-all duration-700 overflow-hidden group ${
                 activeTab === cat.id
                   ? "text-white"
                   : "text-brand-dark/40 hover:text-brand-dark"
@@ -280,14 +281,14 @@ const Partnership = () => {
                 }}
                 className='group relative bg-white rounded-[60px] overflow-hidden border border-brand-dark/10 hover:border-brand-primary/30 transition-all duration-700 hover:shadow-2xl flex flex-col'>
                 {/* Image Section */}
-                <div className='relative aspect-[4/3] overflow-hidden'>
+                <div className='relative aspect-4/3 overflow-hidden'>
                   <Image
                     src={pkg.image}
                     alt={pkg.name}
                     fill
                     className='object-cover transition-transform duration-1000 group-hover:scale-110'
                   />
-                  <div className='absolute inset-0 bg-gradient-to-t from-brand-dark/40 via-transparent to-transparent' />
+                  <div className='absolute inset-0 bg-linear-to-t from-brand-dark/40 via-transparent to-transparent' />
 
                   {/* Price Tag Overlay */}
                   <div className='absolute top-8 right-8 glass px-8 py-3 rounded-full shadow-2xl border-white/30 backdrop-blur-3xl'>
@@ -330,7 +331,7 @@ const Partnership = () => {
                     ))}
                   </div>
 
-                  <button className='group/btn w-full py-6 bg-brand-dark text-white rounded-[32px] font-bold flex items-center justify-center gap-3 hover:bg-brand-primary hover:text-brand-dark transition-all duration-500 shadow-2xl active:scale-[0.98] glow-on-hover uppercase tracking-widest text-xs'>
+                  <button className='group/btn w-full py-6 bg-brand-dark text-white rounded-4xl font-bold flex items-center justify-center gap-3 hover:bg-brand-primary hover:text-brand-dark transition-all duration-500 shadow-2xl active:scale-[0.98] glow-on-hover uppercase tracking-widest text-xs'>
                     Secure Tier{" "}
                     <ArrowRight
                       size={20}
@@ -345,7 +346,7 @@ const Partnership = () => {
 
         {/* Global CTA Banner */}
         <div className='mt-40 bg-brand-dark rounded-[80px] p-16 md:p-32 relative overflow-hidden group mesh-gradient border border-white/5'>
-          <div className='absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-brand-primary/10 via-transparent to-transparent pointer-events-none' />
+          <div className='absolute top-0 right-0 w-2/3 h-full bg-linear-to-l from-brand-primary/10 via-transparent to-transparent pointer-events-none' />
           <div className='relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16'>
             <div className='max-w-2xl text-center lg:text-left'>
               <h4 className='text-5xl md:text-7xl font-display text-white leading-tight mb-8 tracking-tighter'>

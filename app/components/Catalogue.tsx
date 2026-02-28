@@ -18,53 +18,53 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
-    name: "Gaun Linen Akar",
-    price: "Rp 1.250.000",
-    category: "GAUN",
+    name: "Akar Linen Dress",
+    price: "$285",
+    category: "DRESSES",
     image: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
-    tag: "Terlaris",
+    tag: "Best Seller",
   },
   {
     id: 2,
-    name: "Tunik Nila Langit",
-    price: "Rp 950.000",
-    category: "ATASAN",
+    name: "Langit Indigo Tunic",
+    price: "$215",
+    category: "TOPS",
     image: "/img/kim-tayona-CgBrItB1mGk-unsplash.jpg",
-    tag: "Baru",
+    tag: "New",
   },
   {
     id: 3,
-    name: "Sarung Kapas Bumi",
-    price: "Rp 1.850.000",
-    category: "PAKAIAN LUAR",
+    name: "Bumi Cotton Wrap",
+    price: "$420",
+    category: "OUTERWEAR",
     image: "/img/moses-janga-1eLxmJvZrr4-unsplash.jpg",
   },
   {
     id: 4,
-    name: "Blus Sutra Senja",
-    price: "Rp 2.100.000",
-    category: "ATASAN",
+    name: "Senja Silk Blouse",
+    price: "$475",
+    category: "TOPS",
     image: "/img/moses-janga-WZaPKRy4zYQ-unsplash.jpg",
-    tag: "Terbatas",
+    tag: "Limited",
   },
   {
     id: 5,
-    name: "Rok Renda Pagi",
-    price: "Rp 850.000",
-    category: "BAWAHAN",
+    name: "Pagi Lace Skirt",
+    price: "$190",
+    category: "BOTTOMS",
     image: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
   },
   {
     id: 6,
-    name: "Playsuit Rajut Kapas",
-    price: "Rp 750.000",
-    category: "GAUN",
+    name: "Cotton Knit Playsuit",
+    price: "$170",
+    category: "DRESSES",
     image: "/img/kim-tayona-CgBrItB1mGk-unsplash.jpg",
-    tag: "Diskon",
+    tag: "Sale",
   },
 ];
 
-const categoryTabs = ["SEMUA", "GAUN", "ATASAN", "BAWAHAN", "PAKAIAN LUAR"];
+const categoryTabs = ["ALL", "DRESSES", "TOPS", "BOTTOMS", "OUTERWEAR"];
 
 const Catalogue = () => {
   const [activeCategory, setActiveCategory] = useState("ALL");
@@ -91,13 +91,11 @@ const Catalogue = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}>
             <p className='text-[11px] font-medium uppercase tracking-[0.4em] text-brand-dark/40 mb-4'>
-              Toko
+              Shop
             </p>
             <h2 className='text-5xl md:text-7xl font-display text-brand-dark leading-[0.95]'>
-              Potongan Yang{" "}
-              <em className='font-light text-brand-primary'>
-                Dibuat dengan Tangan
-              </em>
+              Handcrafted{" "}
+              <em className='font-light text-brand-primary'>Pieces</em>
             </h2>
           </motion.div>
 

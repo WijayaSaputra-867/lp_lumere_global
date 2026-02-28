@@ -27,24 +27,24 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}>
           <p className='text-[11px] font-medium uppercase tracking-[0.5em] text-white/60 mb-8'>
-            Berakar di Alam, Dibuat untuk Masa Depan
+            Rooted in Nature, Made for Tomorrow
           </p>
 
           <h1 className='text-6xl md:text-[120px] font-display text-white leading-[0.9] mb-10 tracking-tight'>
-            Pakaian Paling <br />
-            <em className='font-light'>Bermakna</em> <br />
-            Untuk Anda
+            The Most <br />
+            <em className='font-light'>Meaningful</em> <br />
+            Clothing For You
           </h1>
 
           <p className='text-white/60 text-lg md:text-xl font-light mb-14 max-w-xl mx-auto leading-relaxed'>
-            Dibuat oleh pengrajin di Indonesia dengan teknik warisan dan pewarna
-            alami 100%. Setiap potongan menceritakan sebuah kisah.
+            Handcrafted by Indonesian artisans using heritage techniques and
+            100% natural dyes. Every piece tells a story.
           </p>
 
           <a
             href='#catalogue'
             className='inline-flex items-center gap-3 px-10 py-4 border border-white/30 text-white text-[11px] font-medium uppercase tracking-[0.3em] rounded-full hover:bg-white hover:text-brand-dark transition-all duration-500'>
-            Jelajahi Koleksi
+            Explore Collection
           </a>
         </motion.div>
       </div>
@@ -56,7 +56,7 @@ const Hero = () => {
         transition={{ delay: 2 }}
         className='absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3'>
         <span className='text-[9px] font-medium uppercase tracking-[0.4em] text-white/40'>
-          Gulir
+          Scroll
         </span>
         <motion.div
           animate={{ y: [0, 8, 0] }}

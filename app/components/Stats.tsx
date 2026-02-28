@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 const Stats = () => {
   const stats = [
-    { label: "Pengrajin Artisan", value: "200+", color: "text-brand-primary" },
-    { label: "Pewarna Alami", value: "100%", color: "text-brand-secondary" },
-    { label: "Negara Terjangkau", value: "25+", color: "text-brand-accent" },
-    { label: "Pohon Ditanam", value: "10k+", color: "text-brand-rose" },
+    { label: "Artisan Makers", value: "200+", color: "text-brand-primary" },
+    { label: "Natural Dyes", value: "100%", color: "text-brand-secondary" },
+    { label: "Countries Reached", value: "25+", color: "text-brand-accent" },
+    { label: "Trees Planted", value: "10k+", color: "text-brand-rose" },
   ];
 
   return (
