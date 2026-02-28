@@ -34,7 +34,7 @@ const About = () => {
             {/* Floating Secondary Image */}
             <motion.div 
               style={{ y: 80 }}
-              className="absolute -bottom-12 -right-12 w-3/5 aspect-square rounded-[48px] overflow-hidden shadow-3xl z-30 border-[16px] border-white">
+              className="absolute -bottom-12 -right-12 w-3/5 aspect-square rounded-[48px] overflow-hidden shadow-2xl z-30 border-[16px] border-white">
               <Image 
                 src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1000&auto=format&fit=crop" 
                 alt="Store Interior"

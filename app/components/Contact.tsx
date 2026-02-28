@@ -65,7 +65,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:w-3/5 bg-white p-12 md:p-24 rounded-[80px] border border-brand-dark/10 shadow-3xl relative overflow-hidden"
+            className="lg:w-3/5 bg-white p-12 md:p-24 rounded-[80px] border border-brand-dark/10 shadow-2xl relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full blur-3xl" />
             

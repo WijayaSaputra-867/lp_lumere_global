@@ -206,7 +206,7 @@ const Partnership = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 1, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative bg-white rounded-[60px] overflow-hidden border border-brand-dark/10 hover:border-brand-primary/30 transition-all duration-700 hover:shadow-3xl flex flex-col"
+                className="group relative bg-white rounded-[60px] overflow-hidden border border-brand-dark/10 hover:border-brand-primary/30 transition-all duration-700 hover:shadow-2xl flex flex-col"
               >
                 {/* Image Section */}
                 <div className="relative aspect-[4/3] overflow-hidden">

@@ -137,7 +137,7 @@ const Catalogue = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative bg-white rounded-[60px] p-4 border border-brand-dark/5 shadow-lg hover:shadow-3xl transition-all duration-700"
+                className="group relative bg-white rounded-[60px] p-4 border border-brand-dark/5 shadow-lg hover:shadow-2xl transition-all duration-700"
               >
                 {/* Image Container */}
                 <div className="relative aspect-[4/5] rounded-[48px] overflow-hidden bg-brand-light">

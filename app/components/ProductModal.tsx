@@ -44,7 +44,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, onClose, product })
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             className="fixed inset-0 z-[111] flex items-center justify-center p-6 pointer-events-none"
           >
-            <div className="bg-white w-full max-w-5xl rounded-[60px] overflow-hidden shadow-3xl flex flex-col md:flex-row pointer-events-auto relative">
+            <div className="bg-white w-full max-w-5xl rounded-[60px] overflow-hidden shadow-2xl flex flex-col md:flex-row pointer-events-auto relative">
               <button
                 onClick={onClose}
                 className="absolute top-8 right-8 w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-dark hover:bg-brand-dark hover:text-white transition-all z-20"

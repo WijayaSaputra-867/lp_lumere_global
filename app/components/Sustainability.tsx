@@ -64,7 +64,7 @@ const Sustainability = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative h-[420px] bg-white rounded-[60px] p-12 border border-brand-dark/5 hover:border-brand-primary/30 transition-all duration-700 hover:shadow-3xl flex flex-col justify-between overflow-hidden"
+              className="group relative h-[420px] bg-white rounded-[60px] p-12 border border-brand-dark/5 hover:border-brand-primary/30 transition-all duration-700 hover:shadow-2xl flex flex-col justify-between overflow-hidden"
             >
               {/* Subtle background glow on hover */}
               <div className="absolute inset-0 bg-brand-primary/0 group-hover:bg-brand-primary/5 transition-colors duration-700 pointer-events-none" />

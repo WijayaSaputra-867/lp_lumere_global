@@ -13,7 +13,7 @@ const Newsletter = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-brand-dark p-16 md:p-32 rounded-[100px] text-center max-w-6xl mx-auto relative overflow-hidden group shadow-3xl mesh-gradient border border-white/5"
+          className="bg-brand-dark p-16 md:p-32 rounded-[100px] text-center max-w-6xl mx-auto relative overflow-hidden group shadow-2xl mesh-gradient border border-white/5"
         >
           {/* Enhanced Decorative Elements */}
           <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-brand-primary/10 via-transparent to-transparent pointer-events-none" />
