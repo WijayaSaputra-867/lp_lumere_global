@@ -23,8 +23,8 @@ const About = () => {
           >
             <div className="relative aspect-[4/5] rounded-[60px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] z-20 border border-brand-dark/5">
               <Image 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
-                alt="Corporate Office"
+                src="https://images.unsplash.com/photo-1490481651871-ab68625d5062?q=80&w=2000&auto=format&fit=crop" 
+                alt="Boutique Experience"
                 fill
                 className="object-cover"
               />
@@ -36,8 +36,8 @@ const About = () => {
               style={{ y: 80 }}
               className="absolute -bottom-12 -right-12 w-3/5 aspect-square rounded-[48px] overflow-hidden shadow-3xl z-30 border-[16px] border-white">
               <Image 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop" 
-                alt="Team working"
+                src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1000&auto=format&fit=crop" 
+                alt="Store Interior"
                 fill
                 className="object-cover"
               />

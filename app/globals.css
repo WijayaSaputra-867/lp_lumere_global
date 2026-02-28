@@ -10,17 +10,21 @@ html {
   --color-brand-accent: #00D1FF; /* Luminous Cyan */
   --color-brand-dark: #0A0A0A; /* Deep Black */
   --color-brand-light: #F8FAFC;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
   
   --font-sans: 'Outfit', 'Inter', sans-serif;
   --font-display: 'Instrument Serif', serif;
 }
 
 :root {
-  --background: #F8FAFC;
+  --background: #F8FAFA;
   --foreground: #0A0A0A;
   --text-muted: #64748B;
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
   --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
@@ -76,6 +80,41 @@ body::before {
 
 .glow-on-hover:hover {
   box-shadow: 0 0 20px rgba(0, 242, 153, 0.4);
+  filter: brightness(1.1);
+}
+
+/* E-commerce Utilities */
+.product-badge {
+  @apply absolute top-6 left-6 px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest z-10;
+}
+
+.badge-new {
+  @apply bg-brand-primary text-brand-dark shadow-[0_0_15px_rgba(0,242,153,0.3)];
+}
+
+.badge-sale {
+  @apply bg-brand-secondary text-white shadow-[0_0_15px_rgba(112,0,255,0.3)];
+}
+
+.cart-sidebar-mask {
+  @apply fixed inset-0 bg-brand-dark/60 backdrop-blur-md z-[100] transition-opacity duration-500;
+}
+
+.cart-sidebar {
+  @apply fixed top-0 right-0 h-full w-full md:w-[480px] bg-white z-[101] shadow-3xl translate-x-full transition-transform duration-700 ease-[0.16,1,0.3,1] flex flex-col;
+}
+
+.cart-sidebar.open {
+  @apply translate-x-0;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .bento-card {

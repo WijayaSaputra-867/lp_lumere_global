@@ -1,129 +1,165 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ShoppingBag, Search, User, Sparkles } from "lucide-react";
+import CartSidebar from "./CartSidebar";
+
+const navLinks = [
+  { name: "Shop All", href: "#catalogue" },
+  { name: "Collections", href: "#divisions" },
+  { name: "Best Sellers", href: "#catalogue" },
+  { name: "About", href: "#about" },
+];
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  
+  // Mock cart items for demonstration
+  const [cartItems, setCartItems] = useState([
+    {
+      id: 1,
+      name: "Ethereal Silk Dress",
+      price: "Rp 1.250.000",
+      image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      quantity: 1
+    }
+  ]);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Expertise', href: '#expertise' },
-    { name: 'Catalogue', href: '#catalogue' },
-    { name: 'Partnership', href: '#partnership' },
-    { name: 'Divisions', href: '#divisions' },
-    { name: 'About Us', href: '#about-us' },
-    { name: 'Sustainability', href: '#sustainability' },
-  ];
+  const removeFromCart = (id: number) => {
+    setCartItems(cartItems.filter(item => item.id !== id));
+  };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${isScrolled ? 'py-4' : 'py-10'}`}>
-      <div className="container mx-auto px-6">
-        <div className={`glass rounded-[40px] px-10 py-5 flex items-center justify-between transition-all duration-700 ${isScrolled ? 'shadow-2xl border-white/30 bg-white/70' : 'border-white/10 bg-white/40'}`}>
-          {/* Logo */}
-          <div className="flex items-center gap-4 group cursor-pointer">
-            <div className="w-12 h-12 bg-brand-dark rounded-2xl flex items-center justify-center text-brand-primary font-bold text-xl shadow-lg group-hover:rotate-[15deg] transition-all duration-500 border border-white/10">
-               L
-            </div>
-            <span className="text-2xl font-display tracking-tight text-brand-dark">
-               LUMERA <span className="text-brand-secondary italic font-normal">GLOBAL</span>
-            </span>
-          </div>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-12">
-            {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                className="text-[11px] font-bold text-brand-dark/70 hover:text-brand-secondary transition-all uppercase tracking-[0.25em] relative group"
-              >
-                {link.name}
-                <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-500 group-hover:w-full" />
-              </a>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-8">
-            <a 
-              href="#contact"
-              className="hidden lg:flex items-center gap-3 px-10 py-4 bg-brand-dark text-white text-[11px] font-bold rounded-full hover:bg-brand-primary hover:text-brand-dark transition-all active:scale-95 uppercase tracking-widest shadow-2xl glow-on-hover"
-            >
-              Get in Touch <ArrowUpRight size={16} />
-            </a>
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-[80] transition-all duration-700 px-6 py-8 ${
+          isScrolled ? "py-4" : ""
+        }`}>
+        <div className={`container mx-auto transition-all duration-700 ${
+            isScrolled ? "max-w-5xl" : "max-w-7xl"
+          }`}>
+          <div className={`relative flex items-center justify-between px-8 py-5 transition-all duration-700 ${
+              isScrolled 
+                ? "glass rounded-[32px] border border-white/20 shadow-2xl backdrop-blur-3xl" 
+                : "bg-transparent"
+            }`}>
             
-            <button 
-              className="md:hidden p-3 text-brand-dark hover:bg-brand-dark/5 rounded-2xl transition-colors"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
+            {/* Logo */}
+            <div className='flex items-center gap-3 group cursor-pointer'>
+              <div className='w-10 h-10 mesh-gradient rounded-2xl flex items-center justify-center text-brand-dark font-black text-lg transition-transform duration-500 group-hover:scale-110 shadow-lg'>
+                L
+              </div>
+              <span className={`text-xl font-display tracking-tighter transition-colors duration-500 ${
+                isScrolled ? "text-brand-dark" : "text-brand-dark"
+              }`}>
+                LUMERA <span className="text-gradient italic font-normal">BOUTIQUE</span>
+              </span>
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className='hidden lg:flex items-center gap-10'>
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className='text-[10px] font-bold uppercase tracking-[0.2em] text-brand-dark/40 hover:text-brand-primary transition-all relative group'>
+                  {link.name}
+                  <span className='absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-500 group-hover:w-full shadow-[0_0_10px_#00F299]' />
+                </a>
+              ))}
+            </div>
+
+            {/* Actions */}
+            <div className='flex items-center gap-4'>
+              <button className="w-10 h-10 rounded-full flex items-center justify-center text-brand-dark/40 hover:text-brand-dark transition-colors">
+                <Search size={20} />
+              </button>
+              <button className="hidden sm:flex w-10 h-10 rounded-full items-center justify-center text-brand-dark/40 hover:text-brand-dark transition-colors">
+                <User size={20} />
+              </button>
+              <button 
+                onClick={() => setIsCartOpen(true)}
+                className='relative w-12 h-12 bg-brand-dark text-white rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-500 shadow-xl group'
+              >
+                <ShoppingBag size={20} className="group-hover:scale-110 transition-transform" />
+                {cartItems.length > 0 && (
+                  <span className='absolute -top-1 -right-1 w-5 h-5 bg-brand-secondary text-white text-[9px] font-bold rounded-full flex items-center justify-center shadow-lg border-2 border-white group-hover:bg-brand-dark group-hover:border-brand-primary transition-colors'>
+                    {cartItems.length}
+                  </span>
+                )}
+              </button>
+              
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className='lg:hidden w-10 h-10 flex items-center justify-center text-brand-dark'>
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            animate={{ opacity: 1, backdropFilter: "blur(20px)" }}
-            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            className="md:hidden fixed inset-0 z-40 bg-brand-dark/10"
-          >
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isOpen && (
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 bottom-0 w-[85%] bg-white/90 backdrop-blur-3xl p-12 flex flex-col justify-center"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className='fixed inset-0 z-[90] bg-white lg:hidden flex flex-col items-center justify-center p-8'
             >
-              <button 
-                className="absolute top-10 right-10 p-3 text-brand-dark hover:bg-brand-dark/5 rounded-full"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <X size={32} />
-              </button>
-
-              <div className="flex flex-col gap-8">
+              <div className="absolute top-8 right-8">
+                 <button onClick={() => setIsOpen(false)} className="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-dark">
+                    <X size={24} />
+                 </button>
+              </div>
+              
+              <div className='flex flex-col items-center gap-10'>
                 {navLinks.map((link, i) => (
-                  <motion.a 
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                  <motion.a
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    key={link.name} 
-                    href={link.href} 
-                    className="text-4xl font-display text-brand-dark hover:text-brand-primary transition-colors italic"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className='text-4xl font-display text-brand-dark hover:text-brand-primary transition-colors'>
                     {link.name}
                   </motion.a>
                 ))}
-                <motion.a 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                  href="#contact"
-                  className="w-full py-6 bg-brand-dark text-white font-bold rounded-[32px] mt-10 text-[14px] tracking-[0.2em] shadow-2xl text-center uppercase"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  CONTACT US
-                </motion.a>
+              </div>
+              
+              <div className="mt-20 flex flex-col items-center gap-6">
+                 <div className="flex items-center gap-2">
+                    <Sparkles size={16} className="text-brand-primary" />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-dark/40">Exclusive Member Access</span>
+                 </div>
+                 <button className="px-12 py-5 bg-brand-dark text-white rounded-full font-bold uppercase tracking-widest text-[11px] glow-on-hover shadow-2xl">
+                    Account Login
+                 </button>
               </div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+          )}
+        </AnimatePresence>
+      </nav>
+
+      <CartSidebar 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)} 
+        items={cartItems}
+        onRemove={removeFromCart}
+      />
+    </>
   );
 };
 

@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 
 const Stats = () => {
   const stats = [
-    { label: "Elite Partners", value: "500+", color: "text-brand-primary" },
-    { label: "Global Hubs", value: "15", color: "text-brand-secondary" },
-    { label: "Monthly Units", value: "500k", color: "text-brand-accent" },
-    { label: "Success Rate", value: "100%", color: "text-brand-primary" }
+    { label: "Happy Shoppers", value: "50k+", color: "text-brand-primary" },
+    { label: "Global Shipping", value: "25+", color: "text-brand-secondary" },
+    { label: "New Arrivals", value: "100+", color: "text-brand-accent" },
+    { label: "Satisfaction", value: "99%", color: "text-brand-primary" }
   ];
 
   return (
