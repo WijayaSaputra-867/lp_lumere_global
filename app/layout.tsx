@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Instrument_Serif } from "next/font/google";
+import { Outfit, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
@@ -8,16 +8,16 @@ const outfit = Outfit({
   variable: "--font-outfit",
 });
 
-const instrumentSerif = Instrument_Serif({
-  weight: "400",
+const cormorant = Cormorant_Garamond({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
-  style: "italic",
-  variable: "--font-instrument",
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
 });
 
 export const metadata: Metadata = {
-  title: "LUMERA GLOBAL | Premium Wholesale & Manufacturing",
-  description: "A global leader in ethical children's fashion manufacturing and wholesale distribution.",
+  title: "LUMERA — Rooted in Nature, Made for Tomorrow",
+  description: "Artisan-crafted sustainable fashion from Indonesia. Handmade with heritage techniques and natural dyes, empowering communities from farm to closet.",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${outfit.variable} ${instrumentSerif.variable} font-sans antialiased`}
+        className={`${outfit.variable} ${cormorant.variable} font-sans antialiased`}
       >
         <Navbar />
         {children}

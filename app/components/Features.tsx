@@ -1,92 +1,85 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Shield, Zap, Globe, Heart, Award, Sparkles } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Scissors, Sprout, HandHeart, Infinity } from "lucide-react";
 
-const features = [
+const promises = [
   {
-    icon: <Shield className="w-8 h-8" />,
-    title: "Eco-Certified Quality",
-    description: "Every garment meets the highest global standards for sustainable and ethical manufacturing.",
-    color: "bg-brand-primary/10 text-brand-primary",
-    border: "border-brand-primary/20"
+    icon: <Scissors size={28} />,
+    title: "Handcrafted",
+    description:
+      "Every piece is touched by artisan hands, not factory machines. Each garment carries the warmth of its maker.",
   },
   {
-    icon: <Globe className="w-8 h-8" />,
-    title: "Global Supply Chain",
-    description: "Our robust network ensures seamless distribution to over 15 countries worldwide.",
-    color: "bg-brand-secondary/10 text-brand-secondary",
-    border: "border-brand-secondary/20"
+    icon: <Sprout size={28} />,
+    title: "Farm-to-Closet",
+    description:
+      "We know every step — from the field where cotton grows to the closet where it lives. Full transparency, always.",
   },
   {
-    icon: <Zap className="w-8 h-8" />,
-    title: "High-Volume Agility",
-    description: "Capacity to produce 500k units monthly with unmatched precision and speed.",
-    color: "bg-brand-accent/10 text-brand-accent",
-    border: "border-brand-accent/20"
+    icon: <HandHeart size={28} />,
+    title: "Heritage Techniques",
+    description:
+      "Batik, ikat, natural dyeing — centuries-old Indonesian craft traditions preserved and celebrated in modern designs.",
   },
   {
-    icon: <Award className="w-8 h-8" />,
-    title: "Design Innovation",
-    description: "Where heritage craftsmanship meets contemporary children's fashion aesthetics.",
-    color: "bg-brand-primary/10 text-brand-primary",
-    border: "border-brand-primary/20"
-  }
+    icon: <Infinity size={28} />,
+    title: "Lifetime Care",
+    description:
+      "We offer free repairs for life. Because the most sustainable garment is the one you never throw away.",
+  },
 ];
 
 const Features = () => {
   return (
-    <section id="expertise" className="py-40 bg-brand-dark relative overflow-hidden mesh-gradient">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-32">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+    <section id="expertise" className="py-28 bg-brand-cream">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-3 mb-8 px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
           >
-            <Sparkles size={16} className="text-brand-primary animate-pulse" />
-            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-white/50">Core Capabilities</span>
+            <p className="text-[11px] font-medium uppercase tracking-[0.4em] text-brand-dark/40 mb-6">
+              Our Promise
+            </p>
+            <h2 className="text-5xl md:text-7xl font-display text-brand-dark leading-[0.95] mb-6">
+              Clothes Made with{" "}
+              <em className="font-light text-brand-accent">Intention</em>
+            </h2>
+            <p className="text-brand-dark/50 text-lg font-light max-w-lg mx-auto leading-relaxed">
+              Four pillars guide everything we create — ensuring every garment
+              is worthy of the hands that made it and the person who wears it.
+            </p>
           </motion.div>
-          <h2 className="text-6xl md:text-8xl font-display text-white leading-[0.9] mb-10 tracking-tighter">
-            The Pillars of <br />
-            <span className="text-gradient italic font-normal">Our Excellence.</span>
-          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
+        {/* Promise Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {promises.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="bento-card group flex flex-col justify-between"
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="group text-center p-10 rounded-2xl bg-white border border-brand-dark/5 hover:border-brand-primary/20 transition-all duration-500 hover-lift"
             >
-              <div className={`w-16 h-16 rounded-[24px] ${feature.color} flex items-center justify-center mb-10 border ${feature.border} group-hover:scale-110 transition-transform duration-500`}>
-                {feature.icon}
+              <div className="w-16 h-16 rounded-xl bg-brand-light text-brand-primary flex items-center justify-center mx-auto mb-8 group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
+                {item.icon}
               </div>
-              <div>
-                <h3 className="text-2xl font-display text-white mb-4 group-hover:text-brand-primary transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-white/40 text-sm font-light leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-              
-              {/* Decorative line */}
-              <div className="w-12 h-[1px] bg-white/10 mt-10 group-hover:w-full transition-all duration-700" />
+              <h3 className="text-xl font-display text-brand-dark mb-3 group-hover:text-brand-primary transition-colors">
+                {item.title}
+              </h3>
+              <p className="text-brand-dark/40 text-sm font-light leading-relaxed">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </div>
       </div>
-      
-      {/* Background Orbs */}
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-brand-primary/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-brand-secondary/10 rounded-full blur-[120px] pointer-events-none" />
     </section>
   );
 };

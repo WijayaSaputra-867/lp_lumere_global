@@ -8,7 +8,7 @@ import Newsletter from "./components/Newsletter";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Catalogue from "./components/Catalogue";
-import Partnership from "./components/Partnership";
+import ColorsOfNature from "./components/ColorsOfNature";
 
 export default function Home() {
   return (
@@ -16,10 +16,11 @@ export default function Home() {
       <Hero />
       <Stats />
       <Collections />
+      <ColorsOfNature />
       <Catalogue />
       <About />
-      <Features />
       <Sustainability />
+      <Features />
       <Newsletter />
       <Contact />
       <Footer />

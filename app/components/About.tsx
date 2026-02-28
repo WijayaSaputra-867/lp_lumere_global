@@ -1,101 +1,111 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { ArrowUpRight, Award } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about-us" className="py-40 bg-white relative overflow-hidden scroll-mt-24">
-      {/* Background Decorative Element */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-primary/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
-
+    <section id="about-us" className="py-28 bg-brand-light scroll-mt-24">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 items-center gap-24">
-          {/* Visual Side with Bold Composition */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          {/* Visual Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] rounded-[60px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] z-20 border border-brand-dark/5">
-              <Image 
-                src="https://images.unsplash.com/photo-1490481651871-ab68625d5062?q=80&w=2000&auto=format&fit=crop" 
-                alt="Boutique Experience"
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1490481651871-ab68625d5062?q=80&w=1200&auto=format&fit=crop"
+                alt="Artisan crafting"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-brand-dark/10 mix-blend-multiply" />
             </div>
 
-            {/* Floating Secondary Image */}
-            <motion.div 
-              style={{ y: 80 }}
-              className="absolute -bottom-12 -right-12 w-3/5 aspect-square rounded-[48px] overflow-hidden shadow-2xl z-30 border-[16px] border-white">
-              <Image 
-                src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1000&auto=format&fit=crop" 
-                alt="Store Interior"
+            {/* Floating accent image */}
+            <div className="absolute -bottom-8 -right-8 w-2/5 aspect-square rounded-2xl overflow-hidden shadow-xl border-8 border-brand-light">
+              <Image
+                src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=600&auto=format&fit=crop"
+                alt="Sustainable fabrics"
                 fill
                 className="object-cover"
               />
-            </motion.div>
-            
-            {/* Experience Badge */}
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-primary rounded-full flex items-center justify-center text-brand-dark shadow-2xl z-40 animate-float border-4 border-white">
-               <div className="text-center">
-                  <p className="text-4xl font-display leading-none">25</p>
-                  <p className="text-[10px] font-bold uppercase tracking-widest leading-none mt-1">Years</p>
-               </div>
+            </div>
+
+            {/* Year badge */}
+            <div className="absolute -top-6 -left-6 w-28 h-28 bg-brand-cream rounded-full flex items-center justify-center border border-brand-primary/20 shadow-sm">
+              <div className="text-center">
+                <p className="text-2xl font-display text-brand-dark leading-none">
+                  Est.
+                </p>
+                <p className="text-xl font-display text-brand-primary leading-none">
+                  1998
+                </p>
+              </div>
             </div>
           </motion.div>
 
           {/* Content Side */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1 }}
           >
-            <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-12 rounded-2xl bg-brand-secondary/10 flex items-center justify-center text-brand-secondary">
-                 <Award size={24} />
-              </div>
-              <span className='text-[11px] font-bold tracking-[0.4em] uppercase text-brand-dark/40'>Our Legacy</span>
-            </div>
-            
-            <h2 className="text-6xl md:text-8xl font-display text-brand-dark leading-[0.9] mb-10 tracking-tighter">
-              Crafting <br />
-              <span className="text-gradient italic font-normal">Global Trends.</span>
-            </h2>
-            
-            <p className="text-brand-dark/60 text-xl mb-12 leading-relaxed font-light max-w-xl">
-              From a vision of sustainable excellence to a worldwide leader, Lumera Global has set the pulse for children&apos;s fashion. We merge ethical manufacturing with uncompromised aesthetic value.
+            <p className="text-[11px] font-medium uppercase tracking-[0.4em] text-brand-dark/40 mb-6">
+              Our Story
             </p>
-            
-            <div className="grid grid-cols-2 gap-12 mb-16">
-              <div className="group">
-                <p className="text-5xl font-display text-brand-dark mb-3 group-hover:text-brand-primary transition-colors">150+</p>
-                <div className="flex flex-col">
-                   <p className="text-brand-dark/40 text-[10px] font-bold uppercase tracking-widest">Global Partners</p>
-                   <div className="w-8 h-[2px] bg-brand-primary mt-2 group-hover:w-full transition-all duration-500" />
-                </div>
+
+            <h2 className="text-5xl md:text-7xl font-display text-brand-dark leading-[0.95] mb-8">
+              Rooted in <br />
+              <em className="font-light text-brand-primary">Generations</em> <br />
+              of Craft
+            </h2>
+
+            <div className="space-y-6 mb-12">
+              <p className="text-brand-dark/50 text-lg font-light leading-relaxed">
+                In 1998, Lumera began as a single workshop in Central Java, where
+                a handful of artisans wove dreams into fabric using techniques
+                passed down through centuries.
+              </p>
+              <p className="text-brand-dark/50 text-lg font-light leading-relaxed">
+                Today, we work with over 200 artisan makers across Indonesia,
+                creating garments dyed entirely with plants — no chemicals, ever.
+                Every stitch carries the warmth of hands that understand both
+                tradition and tomorrow.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-8 mb-12 py-8 border-y border-brand-primary/10">
+              <div>
+                <p className="text-3xl font-display text-brand-primary mb-1">
+                  200+
+                </p>
+                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-brand-dark/40">
+                  Artisan Makers
+                </p>
               </div>
-              <div className="group">
-                <p className="text-5xl font-display text-brand-dark mb-3 group-hover:text-brand-secondary transition-colors">Top</p>
-                <div className="flex flex-col">
-                   <p className="text-brand-dark/40 text-[10px] font-bold uppercase tracking-widest">Global Ranking</p>
-                   <div className="w-8 h-[2px] bg-brand-secondary mt-2 group-hover:w-full transition-all duration-500" />
-                </div>
+              <div>
+                <p className="text-3xl font-display text-brand-secondary mb-1">
+                  100%
+                </p>
+                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-brand-dark/40">
+                  Natural Dyes
+                </p>
               </div>
             </div>
 
-            <button className="group flex items-center gap-4 px-12 py-6 bg-brand-dark text-white rounded-full font-bold transition-all hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] active:scale-95 glow-on-hover">
-              Get to Know Us
-              <ArrowUpRight size={22} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </button>
+            <a
+              href="#sustainability"
+              className="inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.2em] text-brand-dark/50 hover:text-brand-dark transition-colors underline-reveal"
+            >
+              Learn About Our Impact <ArrowRight size={14} />
+            </a>
           </motion.div>
         </div>
       </div>

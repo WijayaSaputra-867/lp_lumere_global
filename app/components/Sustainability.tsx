@@ -1,86 +1,98 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Leaf, Globe, ShieldCheck, Heart, ArrowUpRight, Sparkles } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Leaf, Heart, Globe, ShieldCheck, ArrowRight } from "lucide-react";
 
 const Sustainability = () => {
   const initiatives = [
     {
-      icon: <Leaf className="text-brand-primary" size={28} />,
-      title: "Eco-Conscious Materials",
-      description: "Organic cotton, recycled polyester, and low-impact dyes are woven into our core."
+      icon: <Leaf size={24} />,
+      title: "Zero Chemicals",
+      description:
+        "Every dye comes from plants — indigo, turmeric, mahogany, and sappanwood. No synthetic chemicals touch our fabrics.",
+      color: "text-brand-secondary",
+      bg: "bg-brand-secondary/10",
     },
     {
-      icon: <Heart className="text-brand-secondary" size={28} />,
-      title: "Ethical Labor",
-      description: "Strict adherence to fair trade and safe conditions globally is our promise."
+      icon: <Heart size={24} />,
+      title: "Artisan Empowerment",
+      description:
+        "Fair wages, safe workshops, and skills training for over 200 women artisans across rural Indonesia.",
+      color: "text-brand-rose",
+      bg: "bg-brand-rose/10",
     },
     {
-      icon: <Globe className="text-brand-accent" size={28} />,
-      title: "Carbon Neutrality",
-      description: "Targeting a 50% reduction in our logistics carbon footprint by 2030."
+      icon: <Globe size={24} />,
+      title: "Regenerative Fashion",
+      description:
+        "Our farming practices restore soil health. Every garment you wear helps heal the land it came from.",
+      color: "text-brand-accent",
+      bg: "bg-brand-accent/10",
     },
     {
-      icon: <ShieldCheck className="text-brand-primary" size={28} />,
-      title: "Full Transparency",
-      description: "Blockchain-integrated supply chain tracking for absolute end-to-end visibility."
-    }
+      icon: <ShieldCheck size={24} />,
+      title: "Full Traceability",
+      description:
+        "From farm to closet, every step of our supply chain is transparent. Know exactly who made your clothes.",
+      color: "text-brand-primary",
+      bg: "bg-brand-primary/10",
+    },
   ];
 
   return (
-    <section id="sustainability" className="py-40 bg-white relative overflow-hidden scroll-mt-24">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 w-1/4 h-full bg-brand-primary/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-brand-secondary/5 skew-x-12 -translate-x-1/2 pointer-events-none" />
-
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-end justify-between mb-32 gap-12">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary">
-                 <Sparkles size={24} />
-              </div>
-              <span className='text-[11px] font-bold tracking-[0.4em] uppercase text-brand-dark/40'>Our Global Impact</span>
-            </div>
-            
-            <h2 className="text-6xl md:text-8xl font-display text-brand-dark leading-[0.9] mb-10 tracking-tighter">
-              Legacy of <br />
-              <span className="text-gradient italic font-normal">Conscious Luxury.</span>
+    <section
+      id="sustainability"
+      className="py-28 bg-white scroll-mt-24"
+    >
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row items-end justify-between mb-20 gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
+          >
+            <p className="text-[11px] font-medium uppercase tracking-[0.4em] text-brand-dark/40 mb-6">
+              Our Impact
+            </p>
+            <h2 className="text-5xl md:text-7xl font-display text-brand-dark leading-[0.95] mb-6">
+              Fashion That <br />
+              <em className="font-light text-brand-secondary">Heals the Earth</em>
             </h2>
-          </div>
-          <div className="lg:max-w-md">
-             <p className="text-brand-dark/50 text-xl font-light leading-relaxed">
-                Sustainability is not a feature; it&apos;s our foundation. We redefine children&apos;s fashion by respecting the world they will inherit.
-             </p>
-          </div>
+          </motion.div>
+          <p className="text-brand-dark/50 text-lg font-light leading-relaxed max-w-md">
+            Sustainability isn&apos;t a label we wear — it&apos;s the soil
+            we grow from. Every decision honors the artisans, their
+            communities, and the planet we share.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {initiatives.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative h-[420px] bg-white rounded-[60px] p-12 border border-brand-dark/5 hover:border-brand-primary/30 transition-all duration-700 hover:shadow-2xl flex flex-col justify-between overflow-hidden"
+              transition={{ delay: i * 0.1, duration: 0.6 }}
+              className="group p-8 rounded-2xl border border-brand-dark/5 hover:border-brand-primary/20 bg-brand-light hover:bg-white transition-all duration-500 hover-lift"
             >
-              {/* Subtle background glow on hover */}
-              <div className="absolute inset-0 bg-brand-primary/0 group-hover:bg-brand-primary/5 transition-colors duration-700 pointer-events-none" />
-              
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-brand-light rounded-3xl flex items-center justify-center mb-10 shadow-sm border border-brand-dark/5 group-hover:scale-110 group-hover:bg-white transition-all duration-700">
-                  {item.icon}
-                </div>
-                <h3 className="text-3xl font-display mb-6 text-brand-dark leading-tight group-hover:text-brand-primary transition-colors">{item.title}</h3>
-                <p className="text-brand-dark/50 text-base leading-relaxed font-light">
-                  {item.description}
-                </p>
+              <div
+                className={`w-14 h-14 rounded-xl ${item.bg} ${item.color} flex items-center justify-center mb-8`}
+              >
+                {item.icon}
               </div>
-              
-              <div className="relative z-10 flex items-center gap-3 text-brand-dark/40 text-[10px] font-bold uppercase tracking-[0.2em] mt-8 group-hover:text-brand-dark transition-all duration-500">
-                 Read Our Policy <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <h3 className="text-xl font-display text-brand-dark mb-3 group-hover:text-brand-primary transition-colors">
+                {item.title}
+              </h3>
+              <p className="text-brand-dark/40 text-sm font-light leading-relaxed mb-6">
+                {item.description}
+              </p>
+              <div className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.2em] text-brand-dark/30 group-hover:text-brand-dark transition-colors">
+                Learn More <ArrowRight size={12} />
               </div>
             </motion.div>
           ))}

@@ -1,110 +1,140 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Mail, Phone, ArrowUpRight, Sparkles } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { MapPin, Mail, Phone, ArrowRight } from "lucide-react";
 
 const Contact = () => {
-  const offices = [
-    { city: "London", region: "GLOBAL HQ", email: "london@lumera.global", color: "text-brand-primary" },
-    { city: "Jakarta", region: "PRODUCTION HUB", email: "asia@lumera.global", color: "text-brand-secondary" },
-    { city: "New York", region: "NORTH AMERICA", email: "ny@lumera.global", color: "text-brand-accent" }
-  ];
-
   return (
-    <section id="contact" className="py-40 bg-white relative scroll-mt-24 overflow-hidden">
-       {/* Background accents */}
-       <div className="absolute top-0 left-0 w-1/3 h-full bg-brand-primary/5 -skew-x-12 -translate-x-1/2 pointer-events-none" />
-       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-32">
-          <div className="lg:w-2/5">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary">
-                 <Sparkles size={24} />
-              </div>
-              <span className='text-[11px] font-bold tracking-[0.4em] uppercase text-brand-dark/40'>Global Connection</span>
-            </div>
-            
-            <h2 className="text-6xl md:text-8xl font-display text-brand-dark leading-[0.9] mb-12 tracking-tighter">
-              Forming <br/>
-              <span className="text-gradient italic font-normal">Strategic Bonds.</span>
-            </h2>
-            
-            <p className="text-brand-dark/50 text-xl mb-16 font-light leading-relaxed max-w-md">
-              Your business legacy begins with a conversation. Reach out to our global curators to discuss manufacturing excellence and partnership opportunities.
-            </p>
-
-            <div className="space-y-12">
-              {offices.map((office, i) => (
-                <motion.div 
-                   key={i}
-                   initial={{ opacity: 0, x: -20 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   viewport={{ once: true }}
-                   transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                   className="group cursor-pointer"
-                >
-                   <div className="flex items-start gap-8">
-                      <div className="w-16 h-16 bg-brand-light rounded-3xl flex items-center justify-center shrink-0 border border-brand-dark/5 group-hover:bg-brand-dark group-hover:text-white transition-all duration-700 group-hover:scale-110">
-                        <MapPin size={28} />
-                      </div>
-                      <div>
-                        <h5 className="text-3xl font-display text-brand-dark mb-2 group-hover:text-brand-primary transition-colors">{office.city}</h5>
-                        <p className="text-[10px] text-brand-dark/40 font-bold uppercase tracking-[0.3em] mb-3">{office.region}</p>
-                        <p className={`text-sm ${office.color} font-bold tracking-tight`}>{office.email}</p>
-                      </div>
-                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
+    <section id="contact" className="py-28 bg-white scroll-mt-24">
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-20">
+          {/* Left — Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:w-3/5 bg-white p-12 md:p-24 rounded-[80px] border border-brand-dark/10 shadow-2xl relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full blur-3xl" />
-            
-            <form className="space-y-12 relative z-10">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div className="space-y-4">
-                  <label className="text-[11px] font-bold text-brand-dark/40 uppercase tracking-[0.3em] px-6">First Name</label>
-                  <input type="text" className="w-full px-8 py-6 bg-brand-light/50 border border-brand-dark/5 focus:border-brand-primary focus:bg-white outline-none rounded-[32px] transition-all font-light text-brand-dark placeholder:text-brand-dark/20" placeholder="John" />
+            <p className="text-[11px] font-medium uppercase tracking-[0.4em] text-brand-dark/40 mb-6">
+              Get in Touch
+            </p>
+
+            <h2 className="text-5xl md:text-7xl font-display text-brand-dark leading-[0.95] mb-8">
+              We&apos;d Love to <br />
+              <em className="font-light text-brand-primary">Hear from You</em>
+            </h2>
+
+            <p className="text-brand-dark/50 text-lg font-light leading-relaxed mb-12 max-w-md">
+              Whether you&apos;re curious about our process, want to visit
+              our atelier, or have questions — we&apos;re here.
+            </p>
+
+            {/* Contact Details */}
+            <div className="space-y-8">
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-xl bg-brand-cream flex items-center justify-center text-brand-primary shrink-0">
+                  <MapPin size={20} />
                 </div>
-                <div className="space-y-4">
-                  <label className="text-[11px] font-bold text-brand-dark/40 uppercase tracking-[0.3em] px-6">Last Name</label>
-                  <input type="text" className="w-full px-8 py-6 bg-brand-light/50 border border-brand-dark/5 focus:border-brand-primary focus:bg-white outline-none rounded-[32px] transition-all font-light text-brand-dark placeholder:text-brand-dark/20" placeholder="Doe" />
+                <div>
+                  <h5 className="text-lg font-display text-brand-dark mb-1">
+                    Lumera Atelier
+                  </h5>
+                  <p className="text-brand-dark/40 text-sm font-light">
+                    Jl. Kebon Jeruk No. 12, Menteng
+                    <br />
+                    Jakarta Pusat, 10310
+                  </p>
                 </div>
               </div>
-              <div className="space-y-4">
-                <label className="text-[11px] font-bold text-brand-dark/40 uppercase tracking-[0.3em] px-6">Corporate Email</label>
-                <input type="email" className="w-full px-8 py-6 bg-brand-light/50 border border-brand-dark/5 focus:border-brand-primary focus:bg-white outline-none rounded-[32px] transition-all font-light text-brand-dark placeholder:text-brand-dark/20" placeholder="j.doe@company.com" />
-              </div>
-              <div className="space-y-4">
-                <label className="text-[11px] font-bold text-brand-dark/40 uppercase tracking-[0.3em] px-6">Inquiry Type</label>
-                <div className="relative">
-                   <select className="w-full px-8 py-6 bg-brand-light/50 border border-brand-dark/5 focus:border-brand-primary focus:bg-white outline-none rounded-[32px] transition-all appearance-none font-light cursor-pointer text-brand-dark">
-                     <option>Manufacturing Partnership</option>
-                     <option>Wholesale Inquiry</option>
-                     <option>Media & PR</option>
-                     <option>Other</option>
-                   </select>
-                   <div className="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
-                      <ArrowUpRight size={22} className="rotate-90 text-brand-dark" />
-                   </div>
+
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-xl bg-brand-cream flex items-center justify-center text-brand-primary shrink-0">
+                  <Mail size={20} />
+                </div>
+                <div>
+                  <h5 className="text-lg font-display text-brand-dark mb-1">
+                    Email
+                  </h5>
+                  <p className="text-brand-primary text-sm font-light">
+                    hello@lumera.id
+                  </p>
                 </div>
               </div>
-              <div className="space-y-4">
-                <label className="text-[11px] font-bold text-brand-dark/40 uppercase tracking-[0.3em] px-6">Message</label>
-                <textarea rows={5} className="w-full px-8 py-8 bg-brand-light/50 border border-brand-dark/5 focus:border-brand-primary focus:bg-white outline-none rounded-[40px] transition-all font-light resize-none text-brand-dark placeholder:text-brand-dark/20" placeholder="Describe your vision..."></textarea>
+
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-xl bg-brand-cream flex items-center justify-center text-brand-primary shrink-0">
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <h5 className="text-lg font-display text-brand-dark mb-1">
+                    WhatsApp
+                  </h5>
+                  <p className="text-brand-primary text-sm font-light">
+                    +62 812 3456 7890
+                  </p>
+                </div>
               </div>
-              
-              <button className="group w-full py-8 bg-brand-dark text-white rounded-[40px] font-bold flex items-center justify-center gap-4 hover:bg-brand-primary hover:text-brand-dark transition-all duration-500 shadow-2xl active:scale-[0.98] glow-on-hover uppercase tracking-[0.2em] text-xs">
-                Transmit Message <ArrowUpRight size={26} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </div>
+          </motion.div>
+
+          {/* Right — Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="bg-brand-cream p-10 md:p-14 rounded-3xl"
+          >
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-medium text-brand-dark/40 uppercase tracking-[0.2em] px-4">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-6 py-4 bg-white border border-brand-dark/5 focus:border-brand-primary outline-none rounded-xl transition-all font-light text-brand-dark placeholder:text-brand-dark/20 text-sm"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-medium text-brand-dark/40 uppercase tracking-[0.2em] px-4">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full px-6 py-4 bg-white border border-brand-dark/5 focus:border-brand-primary outline-none rounded-xl transition-all font-light text-brand-dark placeholder:text-brand-dark/20 text-sm"
+                    placeholder="your@email.com"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-[10px] font-medium text-brand-dark/40 uppercase tracking-[0.2em] px-4">
+                  Subject
+                </label>
+                <select className="w-full px-6 py-4 bg-white border border-brand-dark/5 focus:border-brand-primary outline-none rounded-xl transition-all font-light text-brand-dark text-sm appearance-none cursor-pointer">
+                  <option>General Inquiry</option>
+                  <option>Custom Order</option>
+                  <option>Wholesale</option>
+                  <option>Visit the Atelier</option>
+                  <option>Press & Media</option>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-[10px] font-medium text-brand-dark/40 uppercase tracking-[0.2em] px-4">
+                  Message
+                </label>
+                <textarea
+                  rows={4}
+                  className="w-full px-6 py-4 bg-white border border-brand-dark/5 focus:border-brand-primary outline-none rounded-xl transition-all font-light resize-none text-brand-dark placeholder:text-brand-dark/20 text-sm"
+                  placeholder="Tell us what's on your mind..."
+                ></textarea>
+              </div>
+
+              <button className="w-full py-4 bg-brand-dark text-white rounded-xl font-medium flex items-center justify-center gap-3 hover:bg-brand-primary hover:text-brand-dark transition-all duration-500 text-[11px] uppercase tracking-[0.15em]">
+                Send Message <ArrowRight size={16} />
               </button>
             </form>
           </motion.div>

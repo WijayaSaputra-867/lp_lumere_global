@@ -2,104 +2,105 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles, ShoppingBag, Heart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-const categories = [
+const collections = [
   {
-    title: "Eco Essentials",
-    category: "Sustainable Basics",
-    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2000&auto=format&fit=crop",
+    title: "Akar",
+    subtitle: "Roots",
+    description: "Grounding pieces crafted from earth-dyed organic cotton. Heritage weaving techniques passed down through generations.",
+    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1200&auto=format&fit=crop",
     className: "md:col-span-2 md:row-span-1",
-    tag: "Trending"
   },
   {
-    title: "Spring '26",
-    category: "New Arrival",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2000&auto=format&fit=crop",
+    title: "Langit",
+    subtitle: "Sky",
+    description: "Indigo-dyed garments inspired by the vastness of Indonesian skies. Each shade tells a story of patience and craft.",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop",
     className: "md:col-span-1 md:row-span-2",
-    tag: "New"
   },
   {
-    title: "Global Best",
-    category: "Customer Favorites",
-    image: "https://images.unsplash.com/photo-1539109132381-31a1ec6d4b3f?q=80&w=2000&auto=format&fit=crop",
+    title: "Bumi",
+    subtitle: "Earth",
+    description: "Turmeric and mahogany-dyed linens celebrating the rich soils of Java. Warm tones for warm hearts.",
+    image: "https://images.unsplash.com/photo-1539109132381-31a1ec6d4b3f?q=80&w=1200&auto=format&fit=crop",
     className: "md:col-span-2 md:row-span-1",
-    tag: "Popular"
   },
 ];
 
 const Collections = () => {
   return (
-    <section id='divisions' className='py-40 bg-white relative overflow-hidden scroll-mt-24'>
-      <div className='container mx-auto px-6'>
-        <div className='flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8'>
+    <section id="divisions" className="py-28 bg-brand-light scroll-mt-24">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-2xl">
-            <div className="flex items-center gap-3 mb-6">
-              <Sparkles size={16} className="text-brand-primary" />
-              <span className='text-[10px] font-bold tracking-[0.4em] uppercase text-brand-dark/40'>Curated Selection</span>
-            </div>
-            <h2 className='text-6xl md:text-8xl font-display text-brand-dark leading-[0.9] mb-8 tracking-tighter'>
-              Seasonal <br />
-              <span className='italic font-normal text-gradient'>Categories.</span>
+          >
+            <p className="text-[11px] font-medium uppercase tracking-[0.4em] text-brand-dark/40 mb-6">
+              Curated Collections
+            </p>
+            <h2 className="text-5xl md:text-7xl font-display text-brand-dark leading-[0.95] mb-6">
+              Every Thread <br />
+              <em className="font-light text-brand-primary">
+                Tells a Story
+              </em>
             </h2>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}>
-            <button className='group flex items-center gap-4 px-10 py-5 bg-brand-dark text-white rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-brand-primary hover:text-brand-dark transition-all duration-500 shadow-2xl glow-on-hover'>
-               Shop All Collections
-               <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </button>
+            <p className="text-brand-dark/50 text-lg font-light max-w-lg mx-auto leading-relaxed">
+              Three collections inspired by the elements of Indonesian nature,
+              each handcrafted by our artisan communities.
+            </p>
           </motion.div>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-10 auto-rows-[350px]'>
-          {categories.map((item, index) => (
+        {/* Collection Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[380px]">
+          {collections.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={`group relative overflow-hidden rounded-[60px] cursor-pointer ${item.className}`}>
-              
+              transition={{
+                duration: 0.8,
+                delay: index * 0.1,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className={`group relative overflow-hidden rounded-3xl cursor-pointer ${item.className}`}
+            >
               <Image
                 src={item.image}
                 alt={item.title}
                 fill
-                className='object-cover transition-transform duration-1000 group-hover:scale-110 ease-out'
+                className="object-cover transition-transform duration-[1.2s] group-hover:scale-105 ease-out"
               />
-              
-              <div className="product-badge badge-new">{item.tag}</div>
 
-              {/* Overlay Content */}
-              <div className='absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent p-12 flex flex-col justify-end opacity-90 group-hover:opacity-100 transition-opacity'>
-                 <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
-                    <span className='text-[10px] font-bold uppercase tracking-[0.3em] text-white/50 mb-3 block'>
-                       {item.category}
-                    </span>
-                    <h3 className='text-4xl md:text-5xl font-display text-white mb-6'>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/70 via-brand-dark/10 to-transparent transition-all duration-700">
+                <div className="absolute bottom-0 left-0 right-0 p-10">
+                  {/* Title */}
+                  <div className="flex items-baseline gap-3 mb-2">
+                    <h3 className="text-4xl font-display text-white">
                       {item.title}
                     </h3>
-                    
-                    <div className="flex items-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                       <button className="flex items-center gap-2 text-white font-bold text-[11px] uppercase tracking-widest hover:text-brand-primary transition-colors">
-                          Exploration <ArrowUpRight size={16} />
-                       </button>
-                       <div className="w-px h-4 bg-white/20" />
-                       <div className="flex gap-4">
-                          <ShoppingBag size={18} className="text-white/60 hover:text-brand-primary transition-colors" />
-                          <Heart size={18} className="text-white/60 hover:text-brand-primary transition-colors" />
-                       </div>
+                    <span className="text-white/40 text-sm font-light italic">
+                      — {item.subtitle}
+                    </span>
+                  </div>
+
+                  {/* Description & CTA — reveal on hover */}
+                  <div className="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-700 ease-out">
+                    <p className="text-white/60 text-sm font-light leading-relaxed mb-4 max-w-md">
+                      {item.description}
+                    </p>
+                    <div className="flex items-center gap-2 text-white/70 text-[11px] font-medium uppercase tracking-[0.2em] hover:text-white transition-colors">
+                      Explore Collection <ArrowRight size={14} />
                     </div>
-                 </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}

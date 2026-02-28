@@ -1,9 +1,9 @@
 "use client";
 
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, ShoppingBag, Trash2, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ShoppingBag, Minus, Plus, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 interface CartItem {
   id: number;
@@ -20,19 +20,23 @@ interface CartSidebarProps {
   onRemove: (id: number) => void;
 }
 
-const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose, items, onRemove }) => {
-  const total = items.reduce((acc, item) => {
-    const priceNum = parseInt(item.price.replace(/[^\d]/g, ''));
-    return acc + priceNum * item.quantity;
+const formatPrice = (price: string) => price;
+
+const CartSidebar: React.FC<CartSidebarProps> = ({
+  isOpen,
+  onClose,
+  items,
+  onRemove,
+}) => {
+  const subtotal = items.reduce((sum, item) => {
+    const numericPrice = parseInt(
+      item.price.replace(/[^0-9]/g, ""),
+      10
+    );
+    return sum + numericPrice * item.quantity;
   }, 0);
 
-  const formatPrice = (amount: number) => {
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      minimumFractionDigits: 0,
-    }).format(amount);
-  };
+  const formattedSubtotal = `Rp ${subtotal.toLocaleString("id-ID")}`;
 
   return (
     <AnimatePresence>
@@ -49,93 +53,118 @@ const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose, items, onRem
 
           {/* Sidebar */}
           <motion.div
-            initial={{ x: '100%' }}
+            initial={{ x: "100%" }}
             animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="cart-sidebar"
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed top-0 right-0 h-full w-full md:w-[420px] bg-brand-light z-[101] shadow-2xl flex flex-col"
           >
-            <div className="p-8 border-b border-brand-dark/5 flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <ShoppingBag size={24} className="text-brand-dark" />
-                <h2 className="text-2xl font-display text-brand-dark pt-1">Your Bag</h2>
-                <span className="bg-brand-primary text-brand-dark text-[10px] font-bold px-2 py-1 rounded-full ml-2">
-                  {items.length}
-                </span>
+            {/* Header */}
+            <div className="flex items-center justify-between p-8 border-b border-brand-dark/5">
+              <div>
+                <h3 className="text-xl font-display text-brand-dark">
+                  Your Bag
+                </h3>
+                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-brand-dark/40 mt-1">
+                  {items.length} {items.length === 1 ? "item" : "items"}
+                </p>
               </div>
               <button
                 onClick={onClose}
-                className="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-dark hover:bg-brand-dark hover:text-white transition-all transform hover:rotate-90"
+                className="w-10 h-10 rounded-full border border-brand-dark/10 flex items-center justify-center text-brand-dark hover:bg-brand-dark hover:text-white transition-all"
               >
-                <X size={20} />
+                <X size={18} />
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-8 scrollbar-hide space-y-8">
+            {/* Items */}
+            <div className="flex-1 overflow-y-auto p-8 scrollbar-hide">
               {items.length === 0 ? (
-                <div className="h-full flex flex-col items-center justify-center text-center space-y-6">
-                  <div className="w-24 h-24 rounded-full bg-brand-light flex items-center justify-center text-brand-dark/20">
-                    <ShoppingBag size={48} />
-                  </div>
-                  <p className="text-brand-dark/40 font-light">Your bag is currently empty.</p>
+                <div className="flex flex-col items-center justify-center h-full text-center">
+                  <ShoppingBag
+                    size={40}
+                    className="text-brand-dark/10 mb-6"
+                  />
+                  <p className="text-lg font-display text-brand-dark/60 mb-2">
+                    Your bag is empty
+                  </p>
+                  <p className="text-sm text-brand-dark/30 font-light mb-8">
+                    Discover our handcrafted pieces
+                  </p>
                   <button
                     onClick={onClose}
-                    className="px-8 py-4 bg-brand-dark text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-brand-primary hover:text-brand-dark transition-all"
+                    className="px-8 py-3 bg-brand-dark text-white rounded-xl text-[11px] font-medium uppercase tracking-[0.15em] hover:bg-brand-primary hover:text-brand-dark transition-all"
                   >
                     Start Shopping
                   </button>
                 </div>
               ) : (
-                items.map((item) => (
-                  <motion.div
-                    layout
-                    key={item.id}
-                    className="flex gap-6 group"
-                  >
-                    <div className="relative w-24 h-32 rounded-2xl overflow-hidden bg-brand-light shrink-0">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    </div>
-                    <div className="flex-1 flex flex-col justify-between py-1">
-                      <div>
-                        <h4 className="text-lg font-display text-brand-dark mb-1 leading-tight group-hover:text-brand-primary transition-colors">
-                          {item.name}
-                        </h4>
-                        <p className="text-brand-dark/40 text-[10px] uppercase font-bold tracking-widest mb-2">
-                          Qty: {item.quantity}
-                        </p>
-                        <p className="text-brand-secondary font-bold tracking-tight">
-                          {item.price}
-                        </p>
+                <div className="space-y-6">
+                  {items.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex gap-5 p-4 bg-white rounded-2xl border border-brand-dark/5"
+                    >
+                      <div className="w-20 h-24 rounded-xl overflow-hidden bg-brand-cream shrink-0 relative">
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          fill
+                          className="object-cover"
+                        />
                       </div>
-                      <button
-                        onClick={() => onRemove(item.id)}
-                        className="flex items-center gap-2 text-brand-error text-[10px] font-bold uppercase tracking-widest hover:opacity-70 transition-opacity"
-                      >
-                        <Trash2 size={12} /> Remove
-                      </button>
+                      <div className="flex-1 flex flex-col justify-between">
+                        <div>
+                          <h4 className="text-sm font-display text-brand-dark mb-1">
+                            {item.name}
+                          </h4>
+                          <p className="text-sm text-brand-accent font-display">
+                            {formatPrice(item.price)}
+                          </p>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <button className="w-7 h-7 rounded-lg border border-brand-dark/10 flex items-center justify-center text-brand-dark/40 hover:border-brand-primary transition-all">
+                              <Minus size={12} />
+                            </button>
+                            <span className="text-sm font-medium text-brand-dark w-4 text-center">
+                              {item.quantity}
+                            </span>
+                            <button className="w-7 h-7 rounded-lg border border-brand-dark/10 flex items-center justify-center text-brand-dark/40 hover:border-brand-primary transition-all">
+                              <Plus size={12} />
+                            </button>
+                          </div>
+                          <button
+                            onClick={() => onRemove(item.id)}
+                            className="text-[10px] font-medium uppercase tracking-[0.1em] text-brand-dark/30 hover:text-brand-error transition-colors"
+                          >
+                            Remove
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                  </motion.div>
-                ))
+                  ))}
+                </div>
               )}
             </div>
 
+            {/* Footer */}
             {items.length > 0 && (
-              <div className="p-8 bg-brand-light space-y-6">
-                <div className="flex items-center justify-between">
-                  <span className="text-brand-dark/40 text-sm font-light">Subtotal</span>
-                  <span className="text-xl font-display text-brand-dark">{formatPrice(total)}</span>
+              <div className="p-8 border-t border-brand-dark/5">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-brand-dark/40">
+                    Subtotal
+                  </span>
+                  <span className="text-xl font-display text-brand-dark">
+                    {formattedSubtotal}
+                  </span>
                 </div>
-                <button className="w-full py-6 bg-brand-dark text-white rounded-full font-bold flex items-center justify-center gap-3 hover:bg-brand-primary hover:text-brand-dark transition-all shadow-2xl uppercase tracking-widest text-[11px] glow-on-hover px-12">
-                  Proceed to Checkout <ArrowRight size={18} />
-                </button>
-                <p className="text-[9px] text-center text-brand-dark/30 font-bold uppercase tracking-[0.2em]">
-                  Shipping and taxes calculated at checkout
+                <p className="text-[10px] text-brand-dark/30 font-light mb-6 text-center">
+                  Shipping calculated at checkout
                 </p>
+                <button className="w-full py-4 bg-brand-dark text-white rounded-xl font-medium flex items-center justify-center gap-3 hover:bg-brand-primary hover:text-brand-dark transition-all text-[11px] uppercase tracking-[0.15em]">
+                  Proceed to Checkout <ArrowRight size={16} />
+                </button>
               </div>
             )}
           </motion.div>

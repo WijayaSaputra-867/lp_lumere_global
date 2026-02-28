@@ -1,63 +1,72 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ShoppingBag, ArrowRight, Sparkles, TrendingUp } from 'lucide-react';
-import Image from 'next/image';
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-brand-light">
-      {/* Background Animated Gradient */}
-      <div className="absolute inset-0 z-0 mesh-gradient opacity-40" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-          <div className="lg:w-1/2">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="px-4 py-1.5 rounded-full bg-brand-primary/20 text-brand-dark flex items-center gap-2">
-                   <TrendingUp size={14} />
-                   <span className="text-[10px] font-bold uppercase tracking-widest">New Season Drop</span>
-                </div>
-                <div className="flex items-center gap-2 text-brand-dark/40">
-                   <Sparkles size={14} />
-                   <span className="text-[10px] font-bold uppercase tracking-widest">Limited Edition</span>
-                </div>
-              </div>
-              
-              <h1 className="text-7xl md:text-9xl font-display text-brand-dark leading-[0.85] mb-10 tracking-tighter">
-                Ethereal <br />
-                <span className="text-gradient italic font-normal">Elegance.</span>
-              </h1>
-              
-              <p className="text-brand-dark/50 text-xl md:text-2xl font-light mb-12 max-w-lg leading-relaxed">
-                Experience sustainable luxury for the next generation. Our Spring &apos;26 collection combines timeless heritage with state-of-the-art fabrics.
-              </p>
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-secondary/30 rounded-full blur-[70px] -z-10" />
-            </motion.div>
-          </div>
-        </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Full-bleed background image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1490481651871-ab68625d5062?q=80&w=2000&auto=format&fit=crop"
+          alt="Lumera Collection"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-dark/30" />
       </div>
 
-      {/* Modern Scroll Indicator */}
-      <motion.div 
+      {/* Content */}
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="text-[11px] font-medium uppercase tracking-[0.5em] text-white/60 mb-8">
+            Rooted in Nature, Made for Tomorrow
+          </p>
+
+          <h1 className="text-6xl md:text-[120px] font-display text-white leading-[0.9] mb-10 tracking-tight">
+            The Most <br />
+            <em className="font-light">Meaningful</em> <br />
+            Clothes
+          </h1>
+
+          <p className="text-white/60 text-lg md:text-xl font-light mb-14 max-w-xl mx-auto leading-relaxed">
+            Artisan-crafted in Indonesia with heritage techniques and 100%
+            natural dyes. Every piece tells a story.
+          </p>
+
+          <a
+            href="#catalogue"
+            className="inline-flex items-center gap-3 px-10 py-4 border border-white/30 text-white text-[11px] font-medium uppercase tracking-[0.3em] rounded-full hover:bg-white hover:text-brand-dark transition-all duration-500"
+          >
+            Discover the Collection
+          </a>
+        </motion.div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
-        <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center p-1">
-          <motion.div 
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1.5 h-1.5 bg-brand-primary rounded-full shadow-[0_0_10px_#00F299]"
-          />
-        </div>
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+      >
+        <span className="text-[9px] font-medium uppercase tracking-[0.4em] text-white/40">
+          Scroll
+        </span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <ArrowDown size={16} className="text-white/40" />
+        </motion.div>
       </motion.div>
     </section>
   );
