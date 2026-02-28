@@ -18,7 +18,7 @@ const About = () => {
           className='relative w-full lg:w-1/2 min-h-100 lg:min-h-0'>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src='https://images.unsplash.com/photo-1490481651871-ab68625d5062?q=80&w=1200&auto=format&fit=crop'
+            src='/img/moses-janga-WZaPKRy4zYQ-unsplash.jpg'
             alt='Artisan crafting process'
             className='absolute inset-0 w-full h-full object-cover'
           />
@@ -128,19 +128,19 @@ const About = () => {
       <div className='grid grid-cols-2 md:grid-cols-4 gap-0'>
         {[
           {
-            img: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=600&auto=format&fit=crop",
+            img: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
             label: "Ateliér",
           },
           {
-            img: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=600&auto=format&fit=crop",
+            img: "/img/kim-tayona-CgBrItB1mGk-unsplash.jpg",
             label: "Pewarnaan Alami",
           },
           {
-            img: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=600&auto=format&fit=crop",
+            img: "/img/moses-janga-1eLxmJvZrr4-unsplash.jpg",
             label: "Potongan Jadi",
           },
           {
-            img: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=600&auto=format&fit=crop",
+            img: "/img/moses-janga-WZaPKRy4zYQ-unsplash.jpg",
             label: "Komunitas",
           },
         ].map((item, i) => (

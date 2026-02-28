@@ -11,8 +11,7 @@ const collections = [
     subtitle: "Akar",
     description:
       "Potongan lengkap yang dibuat dari kain katun organik berwarna tanah. Teknik tenun warisan yang diwariskan turun-temurun.",
-    image:
-      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1200&auto=format&fit=crop",
+    image: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
     className: "md:col-span-2 md:row-span-1",
   },
   {
@@ -20,8 +19,7 @@ const collections = [
     subtitle: "Langit",
     description:
       "Pakaian berwarna nila yang terinspirasi dari luasnya langit Indonesia. Setiap corak menceritakan kisah kesabaran dan kerajinan.",
-    image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop",
+    image: "/img/kim-tayona-CgBrItB1mGk-unsplash.jpg",
     className: "md:col-span-1 md:row-span-2",
   },
   {
@@ -29,8 +27,7 @@ const collections = [
     subtitle: "Bumi",
     description:
       "Linen berwarna kunyit dan mahoni yang merayakan tanah kaya Jawa. Nada hangat untuk hati yang hangat.",
-    image:
-      "https://images.unsplash.com/photo-1539109132381-31a1ec6d4b3f?q=80&w=1200&auto=format&fit=crop",
+    image: "/img/moses-janga-1eLxmJvZrr4-unsplash.jpg",
     className: "md:col-span-2 md:row-span-1",
   },
 ];
@@ -83,7 +80,7 @@ const Collections = () => {
               />
 
               {/* Overlay */}
-              <div className='absolute inset-0 bg-gradient-to-t from-brand-dark/70 via-brand-dark/10 to-transparent transition-all duration-700'>
+              <div className='absolute inset-0 bg-linear-to-t from-brand-dark/70 via-brand-dark/10 to-transparent transition-all duration-700'>
                 <div className='absolute bottom-0 left-0 right-0 p-10'>
                   {/* Title */}
                   <div className='flex items-baseline gap-3 mb-2'>

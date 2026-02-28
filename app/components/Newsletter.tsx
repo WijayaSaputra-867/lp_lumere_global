@@ -24,10 +24,10 @@ const Newsletter = () => {
 
             <h2 className='text-4xl md:text-6xl font-display text-white leading-[0.95] mb-6'>
               Jadilah Bagian dari <br />
-              <em className='font-light opacity-70'>Kisah Kami</em>
+              <em className='font-light text-white/90'>Kisah Kami</em>
             </h2>
 
-            <p className='text-white/50 text-base mb-12 font-light leading-relaxed'>
+            <p className='text-white/80 text-base mb-12 font-light leading-relaxed'>
               Peluncuran rahasia, cerita pengrajin, dan cuplikan di balik layar
               yang tidak kami bagikan di tempat lain.
             </p>
@@ -36,7 +36,7 @@ const Newsletter = () => {
               <input
                 type='email'
                 placeholder='Alamat email Anda'
-                className='flex-1 px-8 py-4 rounded-full bg-transparent text-white placeholder:text-white/30 focus:outline-none font-light'
+                className='flex-1 px-8 py-4 rounded-full bg-transparent text-white placeholder:text-white/50 focus:outline-none font-light'
               />
               <button className='flex items-center justify-center gap-3 px-8 py-4 bg-white text-brand-secondary rounded-full font-medium transition-all hover:bg-brand-accent hover:text-white text-[11px] uppercase tracking-[0.15em]'>
                 Bergabunglah Bersama Kami
@@ -44,7 +44,7 @@ const Newsletter = () => {
               </button>
             </div>
 
-            <p className='mt-8 text-white/20 text-[10px] font-medium uppercase tracking-[0.3em]'>
+            <p className='mt-8 text-white/40 text-[10px] font-medium uppercase tracking-[0.3em]'>
               Tidak ada spam, berhenti berlangganan kapan saja
             </p>
           </div>

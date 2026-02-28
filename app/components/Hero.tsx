@@ -11,7 +11,7 @@ const Hero = () => {
       {/* Full-bleed background image */}
       <div className='absolute inset-0 z-0'>
         <Image
-          src='https://images.unsplash.com/photo-1490481651871-ab68625d5062?q=80&w=2000&auto=format&fit=crop'
+          src='/img/moses-janga-WZaPKRy4zYQ-unsplash.jpg'
           alt='Lumera Collection'
           fill
           className='object-cover'

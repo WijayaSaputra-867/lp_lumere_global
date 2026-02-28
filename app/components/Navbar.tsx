@@ -22,8 +22,7 @@ const Navbar = () => {
       id: 1,
       name: "Gaun Linen Akar",
       price: "Rp 1.250.000",
-      image:
-        "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+      image: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
       quantity: 1,
     },
   ]);

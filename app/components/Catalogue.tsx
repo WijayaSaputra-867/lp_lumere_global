@@ -21,8 +21,7 @@ const products: Product[] = [
     name: "Gaun Linen Akar",
     price: "Rp 1.250.000",
     category: "GAUN",
-    image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop",
+    image: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
     tag: "Terlaris",
   },
   {
@@ -30,8 +29,7 @@ const products: Product[] = [
     name: "Tunik Nila Langit",
     price: "Rp 950.000",
     category: "ATASAN",
-    image:
-      "https://images.unsplash.com/photo-1519234164450-2975d7d7189b?q=80&w=800&auto=format&fit=crop",
+    image: "/img/kim-tayona-CgBrItB1mGk-unsplash.jpg",
     tag: "Baru",
   },
   {
@@ -39,16 +37,14 @@ const products: Product[] = [
     name: "Sarung Kapas Bumi",
     price: "Rp 1.850.000",
     category: "PAKAIAN LUAR",
-    image:
-      "https://images.unsplash.com/photo-1522771935876-2487333675c0?q=80&w=800&auto=format&fit=crop",
+    image: "/img/moses-janga-1eLxmJvZrr4-unsplash.jpg",
   },
   {
     id: 4,
     name: "Blus Sutra Senja",
     price: "Rp 2.100.000",
     category: "ATASAN",
-    image:
-      "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?q=80&w=800&auto=format&fit=crop",
+    image: "/img/moses-janga-WZaPKRy4zYQ-unsplash.jpg",
     tag: "Terbatas",
   },
   {
@@ -56,16 +52,14 @@ const products: Product[] = [
     name: "Rok Renda Pagi",
     price: "Rp 850.000",
     category: "BAWAHAN",
-    image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecee?q=80&w=800&auto=format&fit=crop",
+    image: "/img/kajetan-sumila-uPhQXmwPVXc-unsplash.jpg",
   },
   {
     id: 6,
     name: "Playsuit Rajut Kapas",
     price: "Rp 750.000",
     category: "GAUN",
-    image:
-      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=800&auto=format&fit=crop",
+    image: "/img/kim-tayona-CgBrItB1mGk-unsplash.jpg",
     tag: "Diskon",
   },
 ];
@@ -140,7 +134,7 @@ const Catalogue = () => {
                 transition={{ duration: 0.5 }}
                 className='group cursor-pointer'>
                 {/* Image */}
-                <div className='relative aspect-[3/4] rounded-2xl overflow-hidden bg-brand-light mb-5'>
+                <div className='relative aspect-3/4 rounded-2xl overflow-hidden bg-brand-light mb-5'>
                   <Image
                     src={product.image}
                     alt={product.name}
