@@ -1,108 +1,92 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { Leaf, Award, Heart, ShieldCheck, ArrowRight } from "lucide-react";
-import Image from "next/image";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Shield, Zap, Globe, Heart, Award, Sparkles } from 'lucide-react';
 
 const features = [
   {
-    icon: Leaf,
-    title: "Eco-Conscious Manufacturing",
-    desc: "Our production facilities adhere to the highest GOTS standards, ensuring sustainable growth.",
-    span: "md:col-span-2 md:row-span-1",
-    bg: "bg-white",
+    icon: <Shield className="w-8 h-8" />,
+    title: "Eco-Certified Quality",
+    description: "Every garment meets the highest global standards for sustainable and ethical manufacturing.",
+    color: "bg-brand-primary/10 text-brand-primary",
+    border: "border-brand-primary/20"
   },
   {
-    icon: Award,
-    title: "Premium Wholesale",
-    desc: "Expertly crafted garments designed to elevate your retail offering.",
-    span: "md:col-span-1 md:row-span-1",
-    bg: "bg-brand-primary/10",
+    icon: <Globe className="w-8 h-8" />,
+    title: "Global Supply Chain",
+    description: "Our robust network ensures seamless distribution to over 15 countries worldwide.",
+    color: "bg-brand-secondary/10 text-brand-secondary",
+    border: "border-brand-secondary/20"
   },
   {
-    icon: Heart,
-    title: "Ethical Supply Chain",
-    desc: "Transparency and fair labor practices are at our heart.",
-    span: "md:col-span-1 md:row-span-2",
-    bg: "bg-brand-secondary/10",
+    icon: <Zap className="w-8 h-8" />,
+    title: "High-Volume Agility",
+    description: "Capacity to produce 500k units monthly with unmatched precision and speed.",
+    color: "bg-brand-accent/10 text-brand-accent",
+    border: "border-brand-accent/20"
   },
   {
-    icon: ShieldCheck,
-    title: "Retail Support",
-    desc: "Dedicated account management and flexible logistics.",
-    span: "md:col-span-2 md:row-span-1",
-    bg: "bg-white",
-  },
+    icon: <Award className="w-8 h-8" />,
+    title: "Design Innovation",
+    description: "Where heritage craftsmanship meets contemporary children's fashion aesthetics.",
+    color: "bg-brand-primary/10 text-brand-primary",
+    border: "border-brand-primary/20"
+  }
 ];
 
 const Features = () => {
   return (
-    <section id="expertise" className='py-32 bg-brand-light/50 overflow-hidden scroll-mt-24'>
-      <div className='container mx-auto px-6'>
-        <div className="max-w-4xl mb-20">
-           <div className="flex items-center gap-3 mb-6">
-              <span className="w-8 h-[1px] bg-brand-dark/20" />
-              <span className='text-[10px] font-bold tracking-[0.3em] uppercase text-brand-dark/50'>Our Expertise</span>
-           </div>
-           <h2 className='text-5xl md:text-7xl font-display text-brand-dark leading-[1.1] mb-8'>
-             The Backbone of <br />
-             <span className='italic font-normal opacity-60'>Modern Retail.</span>
-           </h2>
+    <section id="expertise" className="py-40 bg-brand-dark relative overflow-hidden mesh-gradient">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-32">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-3 mb-8 px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
+          >
+            <Sparkles size={16} className="text-brand-primary animate-pulse" />
+            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-white/50">Core Capabilities</span>
+          </motion.div>
+          <h2 className="text-6xl md:text-8xl font-display text-white leading-[0.9] mb-10 tracking-tighter">
+            The Pillars of <br />
+            <span className="text-gradient italic font-normal">Our Excellence.</span>
+          </h2>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[240px]'>
-          {/* Main Large Card */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="md:col-span-2 md:row-span-2 relative rounded-[40px] overflow-hidden group shadow-sm border border-brand-dark/5"
-          >
-             <Image 
-                src='/img/kim-tayona-CgBrItB1mGk-unsplash.jpg'
-                alt="Factory expertise"
-                fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-             />
-             <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
-             <div className="absolute bottom-10 left-10 right-10">
-                <div className="glass inline-flex p-3 rounded-2xl mb-6">
-                   <ShieldCheck className="text-white" size={24} />
-                </div>
-                <h3 className="text-3xl font-display text-white mb-4">Unmatched Quality Control</h3>
-                <p className="text-white/70 max-w-sm mb-6 font-light">
-                   Every thread is inspected by experts, ensuring that your brand delivers only the finest garments to your customers.
-                </p>
-                <button className="flex items-center gap-2 text-white font-bold group/btn">
-                   Learn more <ArrowRight size={18} className="transition-transform group-hover/btn:translate-x-1" />
-                </button>
-             </div>
-          </motion.div>
-
-          {/* Feature Bento Cards */}
-          {features.map((f, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className={`${f.span} ${f.bg} rounded-[40px] p-10 flex flex-col justify-between border border-brand-dark/5 hover:border-brand-primary/30 transition-colors shadow-sm`}>
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6">
-                  <f.icon className='text-brand-dark' size={24} />
-                </div>
-                <h4 className='text-xl md:text-2xl font-display text-brand-dark mb-4'>{f.title}</h4>
+              transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="bento-card group flex flex-col justify-between"
+            >
+              <div className={`w-16 h-16 rounded-[24px] ${feature.color} flex items-center justify-center mb-10 border ${feature.border} group-hover:scale-110 transition-transform duration-500`}>
+                {feature.icon}
               </div>
-              <p className='text-brand-dark/60 text-sm leading-relaxed font-light'>
-                {f.desc}
-              </p>
+              <div>
+                <h3 className="text-2xl font-display text-white mb-4 group-hover:text-brand-primary transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-white/40 text-sm font-light leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+              
+              {/* Decorative line */}
+              <div className="w-12 h-[1px] bg-white/10 mt-10 group-hover:w-full transition-all duration-700" />
             </motion.div>
           ))}
         </div>
       </div>
+      
+      {/* Background Orbs */}
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-brand-primary/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-brand-secondary/10 rounded-full blur-[120px] pointer-events-none" />
     </section>
   );
 };

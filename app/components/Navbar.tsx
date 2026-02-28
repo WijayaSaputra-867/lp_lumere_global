@@ -18,52 +18,54 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Expertise', href: '#expertise' },
+    { name: 'Catalogue', href: '#catalogue' },
+    { name: 'Partnership', href: '#partnership' },
     { name: 'Divisions', href: '#divisions' },
     { name: 'About Us', href: '#about-us' },
     { name: 'Sustainability', href: '#sustainability' },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-4' : 'py-8'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${isScrolled ? 'py-4' : 'py-10'}`}>
       <div className="container mx-auto px-6">
-        <div className={`glass rounded-[32px] px-8 py-4 flex items-center justify-between transition-all duration-500 ${isScrolled ? 'shadow-2xl border-white/20' : 'border-transparent'}`}>
+        <div className={`glass rounded-[40px] px-10 py-5 flex items-center justify-between transition-all duration-700 ${isScrolled ? 'shadow-2xl border-white/30 bg-white/70' : 'border-white/10 bg-white/40'}`}>
           {/* Logo */}
-          <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="w-10 h-10 hero-gradient rounded-2xl flex items-center justify-center text-brand-dark font-bold text-lg shadow-lg group-hover:rotate-12 transition-transform duration-500">
+          <div className="flex items-center gap-4 group cursor-pointer">
+            <div className="w-12 h-12 bg-brand-dark rounded-2xl flex items-center justify-center text-brand-primary font-bold text-xl shadow-lg group-hover:rotate-[15deg] transition-all duration-500 border border-white/10">
                L
             </div>
             <span className="text-2xl font-display tracking-tight text-brand-dark">
-               LUMERA <span className="italic font-normal opacity-40">GLOBAL</span>
+               LUMERA <span className="text-brand-secondary italic font-normal">GLOBAL</span>
             </span>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="text-[10px] font-bold text-brand-dark/60 hover:text-brand-dark transition-colors uppercase tracking-[0.2em] relative group"
+                className="text-[11px] font-bold text-brand-dark/70 hover:text-brand-secondary transition-all uppercase tracking-[0.25em] relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-primary transition-all group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-500 group-hover:w-full" />
               </a>
             ))}
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-8">
             <a 
               href="#contact"
-              className="hidden lg:flex items-center gap-2 px-8 py-3 bg-brand-dark text-white text-[10px] font-bold rounded-full hover:bg-brand-primary hover:text-brand-dark transition-all active:scale-95 uppercase tracking-widest shadow-xl"
+              className="hidden lg:flex items-center gap-3 px-10 py-4 bg-brand-dark text-white text-[11px] font-bold rounded-full hover:bg-brand-primary hover:text-brand-dark transition-all active:scale-95 uppercase tracking-widest shadow-2xl glow-on-hover"
             >
-              Contact Us <ArrowUpRight size={14} />
+              Get in Touch <ArrowUpRight size={16} />
             </a>
             
             <button 
-              className="md:hidden p-2 text-brand-dark hover:bg-brand-dark/5 rounded-full transition-colors"
+              className="md:hidden p-3 text-brand-dark hover:bg-brand-dark/5 rounded-2xl transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
@@ -73,30 +75,51 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            className="md:hidden absolute top-full left-0 right-0 mt-4 px-6"
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(20px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            className="md:hidden fixed inset-0 z-40 bg-brand-dark/10"
           >
-            <div className="glass rounded-[40px] p-10 flex flex-col gap-6 shadow-2xl border-white/40 text-center">
-              {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href} 
-                  className="text-2xl font-display text-brand-dark hover:text-brand-primary transition-colors italic"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-              <a 
-                href="#contact"
-                className="w-full py-5 bg-brand-dark text-white font-bold rounded-[24px] mt-6 text-[12px] tracking-[0.2em] shadow-xl"
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="absolute right-0 top-0 bottom-0 w-[85%] bg-white/90 backdrop-blur-3xl p-12 flex flex-col justify-center"
+            >
+              <button 
+                className="absolute top-10 right-10 p-3 text-brand-dark hover:bg-brand-dark/5 rounded-full"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                CONTACT US
-              </a>
-            </div>
+                <X size={32} />
+              </button>
+
+              <div className="flex flex-col gap-8">
+                {navLinks.map((link, i) => (
+                  <motion.a 
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    key={link.name} 
+                    href={link.href} 
+                    className="text-4xl font-display text-brand-dark hover:text-brand-primary transition-colors italic"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </motion.a>
+                ))}
+                <motion.a 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                  href="#contact"
+                  className="w-full py-6 bg-brand-dark text-white font-bold rounded-[32px] mt-10 text-[14px] tracking-[0.2em] shadow-2xl text-center uppercase"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  CONTACT US
+                </motion.a>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -5,22 +5,22 @@ html {
 }
 
 @theme {
-  --color-brand-primary: #EAB2A0; /* Muted Terracotta/Peach */
-  --color-brand-secondary: #9DB7C4; /* Soft Cadet Blue */
-  --color-brand-accent: #D9D9D9; /* Silver/Light Gray */
-  --color-brand-dark: #1A1C1E; /* Deep Charcoal */
-  --color-brand-light: #FBFBFB;
+  --color-brand-primary: #00F299; /* Luminous Emerald */
+  --color-brand-secondary: #7000FF; /* Electric Violet */
+  --color-brand-accent: #00D1FF; /* Luminous Cyan */
+  --color-brand-dark: #0A0A0A; /* Deep Black */
+  --color-brand-light: #F8FAFC;
   
   --font-sans: 'Outfit', 'Inter', sans-serif;
   --font-display: 'Instrument Serif', serif;
 }
 
 :root {
-  --background: #FBFBFB;
-  --foreground: #1A1C1E;
+  --background: #F8FAFC;
+  --foreground: #0A0A0A;
   --text-muted: #64748B;
-  --glass-bg: rgba(255, 255, 255, 0.4);
-  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.4);
   --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
@@ -40,51 +40,57 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: var(--grain);
-  opacity: 0.03;
+  opacity: 0.05;
   pointer-events: none;
   z-index: 50;
 }
 
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.hero-gradient {
-  background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-secondary) 100%);
+.mesh-gradient {
+  background-color: #0A0A0A;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(158,100%,47%,0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(266,100%,50%,0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(189,100%,50%,0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(266,100%,50%,0.1) 0px, transparent 50%);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #EAB2A0, #9DB7C4);
+  background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.bento-card {
-  @apply relative overflow-hidden rounded-[32px] border border-white/20 bg-white/10 p-8 transition-all duration-500 hover:scale-[1.02] hover:bg-white/20;
-  backdrop-filter: blur(10px);
+.glow-on-hover {
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 200px;
-  gap: 1.5rem;
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(0, 242, 153, 0.4);
+}
+
+.bento-card {
+  @apply relative overflow-hidden rounded-[40px] border border-white/10 bg-white/5 p-8 transition-all duration-700 hover:scale-[1.01] hover:bg-white/10;
+  backdrop-filter: blur(16px);
 }
 
 @keyframes float {
   0% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-20px) rotate(2deg); }
-  66% { transform: translateY(10px) rotate(-1deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
   100% { transform: translateY(0px) rotate(0deg); }
 }
 
 .animate-float {
-  animation: float 10s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 .reveal-text {
